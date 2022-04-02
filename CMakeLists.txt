@@ -3,4 +3,5 @@ project(projeto_DA)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(projeto_DA main.cpp)
+add_executable(projeto_DA main.cpp
+                Armazem.cpp Armazem.h)
