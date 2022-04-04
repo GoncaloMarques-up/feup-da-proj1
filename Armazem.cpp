@@ -35,4 +35,3 @@ void Armazem::cenario2() {
 void Armazem::cenario3() {
     cout << "yeet";
 }
-

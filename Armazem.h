@@ -31,5 +31,4 @@ public:
 
 };
 
-
 #endif //PROJETO_DA_ARMAZEM_H
