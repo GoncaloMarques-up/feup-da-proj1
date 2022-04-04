@@ -8,12 +8,15 @@
 #include <iostream>
 #include <list>
 
+#include "Encomenda.h"
+#include "Carrinha.h"
+
 using namespace std;
 
 class Armazem {
 private:
-    list<int> encomendas;
-    list<int> estafetas;
+    list<Encomenda> encomendas;
+    list<Carrinha> carrinhas;
     const float lucro_threshold = 5.0;
 
 public:

@@ -2,20 +2,20 @@
 // Created by goncalo on 04/04/22.
 //
 
-#ifndef PROJETO_DA_ESTAFETA_H
-#define PROJETO_DA_ESTAFETA_H
+#ifndef PROJETO_DA_CARRINHA_H
+#define PROJETO_DA_CARRINHA_H
 
 #include <iostream>
 
 using namespace std;
 
-class Estafeta {
+class Carrinha {
 private:
     string matricula;//talvez mudar para int depois
     unsigned int maxVol, maxPeso, custo;
 
 public:
-    Estafeta(string matricula, unsigned int maxVol, unsigned int maxPeso, unsigned int custo);
+    Carrinha(string matricula, unsigned int maxVol, unsigned int maxPeso, unsigned int custo);
 
     const string &getMatricula() const;
 
@@ -35,4 +35,4 @@ public:
 };
 
 
-#endif //PROJETO_DA_ESTAFETA_H
+#endif //PROJETO_DA_CARRINHA_H

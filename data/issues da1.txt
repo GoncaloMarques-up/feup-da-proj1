@@ -1,0 +1,65 @@
+ISSUE 1 (Classe Armazém):
+	com lista de Pedidos
+	com lista de Estafetas
+		
+
+ISSUE 2 (Classe Pedido):
+	Remetente // opcional
+	Destinatário // opcional mas pode ficar bem no output "A Encomeda foi Entregue com sucesso a <dest.>"
+	Destino
+	Tipo de Transporte
+	peso
+	Volume
+	recompensa
+
+ISSUE 3 (Classe Estafeta): 
+	matricula
+	Capacidade de Transporte - Duvida: Pode ser alterado pelo estafeta?
+		volMax - Volume Máximo 
+		pesoMax - Peso Máximo 
+	Custo do Transporte (pago pela empresa): proporcional ao nº de encomendas entregues num dia
+
+
+
+Tipo de Transporte Expresso:
+
+
+ISSUE 4 (Cenário 1 - Otimização do Número de estafetas):
+	função de distribuição de encomendas do tipo normal
+	Conjunto de Estafetas registados: E
+	Conjunto de Pedidos a Entregar: P
+	Objetivo: minimizar o nº de estafetas para a entrega de todos os pedidos ou do maior número de pedidos, num dia
+
+info extra:
+	Tipo de Transporte Normal:
+	Acontece mais vezes
+	Encomendas não têm de ser entregues no mesmo dia
+	São contratados Estafetas
+	Estafetas estão sempre disponiveis
+	1 estafeta só faz 1 viagem por dia, ou seja, deve de se maximizar o nº de entregas que ele faz
+    	os que não puderem ser transportadas naquele dia serão devolvidas ao remetente - Duvida: Voltam ao remetente ou ao Armazém?
+
+ISSUE 5 (Cenário 2 - Otimização do Lucro da Empresa):
+	Função de distribuição de encomendas do tipo normal
+	selecionar os estafetas que num determinado dia maximizam o lucro da empresa (Diferença entre Receita Total e Despesa com o estafeta)
+	No caso de não haver capacidade de transporte ou as despesas serem superiores às receitas, os pedidos que não puderem ser transportados são descartados e retornam ao fornecedor
+	Duvida: Deve haver um threshold de lucro? ou seja, uma constante mínima de lucro que decide se as entregas fornecem um lucro superior a, por exemplo, 5 euros, senão as encomendas não serão entregues?
+
+
+ISSUE 6 (Cenário 3 - Otimização das Entregas Expresso)
+	Viatura com capacidade unitária
+	Os pedidos têm um tempo estimado de entrega*
+	Só podem ser feitas durante o horário comercial (9:00 - 17:00)
+	Objetivo: Minimizar o tempo médio das entregas num dia
+	Os pedidos não processados num dia são descartados e retornam ao fornecedor
+
+info extra:
+    Viatura de capacidade unitária - 1 pedido à vez
+    Volume e Peso do pedido não importam
+    *Tempo Estimado de Entrega:
+                Realizar pedido +
+                Transportar a mercadoria até ao destino final +
+                Regressar ao armazém
+
+
+ISSUE ...: TBD
