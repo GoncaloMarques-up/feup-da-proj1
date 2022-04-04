@@ -6,14 +6,14 @@
 
 #include <utility>
 
-Carrinha::Estafeta(string matricula, unsigned int maxVol, unsigned int maxPeso, unsigned int custo) : matricula(std::move(
-        matricula)), maxVol(maxVol), maxPeso(maxPeso), custo(custo) {}
+Carrinha::Carrinha(unsigned int matricula, unsigned int maxVol, unsigned int maxPeso, unsigned int custo) :
+                    matricula(matricula), maxVol(maxVol), maxPeso(maxPeso), custo(custo) {}
 
-const string &Carrinha::getMatricula() const {
+const unsigned int &Carrinha::getMatricula() const {
     return matricula;
 }
 
-void Carrinha::setMatricula(const string &matricula) {
+void Carrinha::setMatricula(const unsigned int &matricula) {
     Carrinha::matricula = matricula;
 }
 

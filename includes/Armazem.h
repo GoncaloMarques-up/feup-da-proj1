@@ -20,15 +20,15 @@ private:
     const float lucro_threshold = 5.0;
 
 public:
-    Armazem(const list<int> &encomendas, const list<int> &estafetas, const float lucroThreshold);
+    Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas, float lucroThreshold);
 
-    const list<int> &getEncomendas() const;
-    void setEncomendas(const list<int> &encomendas);
+    list<Encomenda> getEncomendas() const;
+    void setEncomendas(const list<Encomenda> &encomendas);
 
-    const list<int> &getEstafetas() const;
-    void setEstafetas(const list<int> &estafetas);
+    const list<Carrinha> &getCarrinhas() const;
+    void setCarrinhas(const list<Carrinha> &carrinhas);
 
-    const float getLucroThreshold() const;
+    float getLucroThreshold() const;
 
     void cenario1();
     void cenario2();

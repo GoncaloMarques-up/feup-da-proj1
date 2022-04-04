@@ -11,26 +11,21 @@ using namespace std;
 
 class Carrinha {
 private:
-    string matricula;//talvez mudar para int depois
-    unsigned int maxVol, maxPeso, custo;
+    unsigned int matricula, maxVol, maxPeso, custo;
 
 public:
-    Carrinha(string matricula, unsigned int maxVol, unsigned int maxPeso, unsigned int custo);
+    Carrinha(unsigned int matricula, unsigned int maxVol, unsigned int maxPeso, unsigned int custo);
 
-    const string &getMatricula() const;
-
-    void setMatricula(const string &matricula);
+    const unsigned int &getMatricula() const;
+    void setMatricula(const unsigned int &matricula);
 
     unsigned int getMaxVol() const;
-
     void setMaxVol(unsigned int maxVol);
 
     unsigned int getMaxPeso() const;
-
     void setMaxPeso(unsigned int maxPeso);
 
     unsigned int getCusto() const;
-
     void setCusto(unsigned int custo);
 };
 

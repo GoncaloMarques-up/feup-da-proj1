@@ -4,27 +4,27 @@
 
 #include "../includes/Armazem.h"
 
-Armazem::Armazem(const list<int> &encomendas, const list<int> &estafetas, const float lucroThreshold) : encomendas(
-        encomendas), estafetas(estafetas), lucro_threshold(lucroThreshold) {}
+Armazem::Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas, float lucroThreshold) : encomendas(
+        encomendas), carrinhas(carrinhas), lucro_threshold(lucroThreshold) {}
 
 
-const list<int> &Armazem::getEncomendas() const {
+list<Encomenda> Armazem::getEncomendas() const {
     return encomendas;
 }
 
-void Armazem::setEncomendas(const list<int> &encomendas) {
+void Armazem::setEncomendas(const list<Encomenda> &encomendas) {
     Armazem::encomendas = encomendas;
 }
 
-const list<int> &Armazem::getEstafetas() const {
-    return estafetas;
+const list<Carrinha> &Armazem::getCarrinhas() const {
+    return carrinhas;
 }
 
-void Armazem::setEstafetas(const list<int> &estafetas) {
-    Armazem::estafetas = estafetas;
+void Armazem::setCarrinhas(const list<Carrinha> &carrinhas) {
+    Armazem::carrinhas = carrinhas;
 }
 
-const float Armazem::getLucroThreshold() const {
+float Armazem::getLucroThreshold() const {
     return lucro_threshold;
 }
 
