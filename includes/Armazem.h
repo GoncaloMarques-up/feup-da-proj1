@@ -17,6 +17,8 @@ private:
     const float lucro_threshold = 5.0;
 
 public:
+    Armazem(const list<int> &encomendas, const list<int> &estafetas, const float lucroThreshold);
+
     const list<int> &getEncomendas() const;
     void setEncomendas(const list<int> &encomendas);
 

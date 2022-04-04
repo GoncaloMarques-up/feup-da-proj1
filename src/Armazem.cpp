@@ -4,6 +4,10 @@
 
 #include "../includes/Armazem.h"
 
+Armazem::Armazem(const list<int> &encomendas, const list<int> &estafetas, const float lucroThreshold) : encomendas(
+        encomendas), estafetas(estafetas), lucro_threshold(lucroThreshold) {}
+
+
 const list<int> &Armazem::getEncomendas() const {
     return encomendas;
 }
@@ -35,3 +39,5 @@ void Armazem::cenario2() {
 void Armazem::cenario3() {
     cout << "yeet";
 }
+
+
