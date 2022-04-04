@@ -2,7 +2,7 @@
 // Created by ASUS on 02/04/2022.
 //
 
-#include "Armazem.h"
+#include "../includes/Armazem.h"
 
 const list<int> &Armazem::getEncomendas() const {
     return encomendas;
