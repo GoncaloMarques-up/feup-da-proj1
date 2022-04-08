@@ -29,7 +29,27 @@ float Armazem::getLucroThreshold() const {
 }
 
 void Armazem::cenario1() {
-    cout << "yeet";
+    int volRem;
+    int pesRem;
+    for (auto &carrinha :carrinhas){
+        auto it = encomendas.begin();
+        volRem = carrinha.getMaxVol();
+        pesRem =carrinha.getMaxPeso();
+        for (auto &encomenda : encomendas){
+            if (volRem>encomenda.getVolume() && pesRem>encomenda.getPeso()){
+                volRem -= encomenda.getVolume();
+                pesRem -= encomenda.getPeso();
+                encomendas.erase(it);
+                carrinha.addEnconmenda(encomenda);
+            }
+            it++;
+        }
+    }
+    int count =0;
+    for (auto &carrinha : carrinhas){
+        cout << count << " " << carrinha.getNumEncomendas();
+        count++;
+    }
 }
 
 void Armazem::cenario2() {

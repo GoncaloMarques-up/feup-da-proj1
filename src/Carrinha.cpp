@@ -41,4 +41,12 @@ void Carrinha::setCusto(unsigned int custo) {
     Carrinha::custo = custo;
 }
 
+void Carrinha::addEnconmenda(Encomenda encomenda) {
+    enconmendas.push_back(encomenda);
+}
+
+int Carrinha::getNumEncomendas() {
+    return enconmendas.size();
+}
+
 
