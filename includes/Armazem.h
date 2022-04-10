@@ -19,6 +19,7 @@ private:
     list<Carrinha> carrinhas;
 
 public:
+    Armazem();
     Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas);
 
     list<Encomenda> getEncomendas() const;
