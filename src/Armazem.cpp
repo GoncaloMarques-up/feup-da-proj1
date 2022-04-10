@@ -22,7 +22,7 @@ void Armazem::setEncomendas(const list<Encomenda> &encomendas) {
     Armazem::encomendas = encomendas;
 }
 
-const list<Carrinha> &Armazem::getCarrinhas() const {
+list<Carrinha> Armazem::getCarrinhas() const {
     return carrinhas;
 }
 

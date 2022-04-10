@@ -25,7 +25,7 @@ public:
     list<Encomenda> getEncomendas() const;
     void setEncomendas(const list<Encomenda> &encomendas);
 
-    const list<Carrinha> &getCarrinhas() const;
+    list<Carrinha> getCarrinhas() const;
     void setCarrinhas(const list<Carrinha> &carrinhas);
 
     void cenario1();
