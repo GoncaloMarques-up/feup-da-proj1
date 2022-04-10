@@ -7,13 +7,17 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <list>
 #include "Armazem.h"
+#include "Encomenda.h"
+#include "Carrinha.h"
 
 class FileReader {
 public:
     FileReader();
-    void GuardaCarrinhas(Armazem &armazem);
-    void GuardaEncomendas(Armazem &armazem);
+    list<Carrinha> GuardaCarrinhas();
+    list<Encomenda> GuardaEncomendas();
 
 };
 
