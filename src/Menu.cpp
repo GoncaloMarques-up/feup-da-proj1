@@ -2,7 +2,6 @@
 // Created by ASUS on 05/04/2022.
 //
 
-#include <iostream>
 #include "../includes/Menu.h"
 
 Menu::Menu() {
@@ -24,7 +23,7 @@ void Menu::mainMenu() {
     int input;
     do{
         drawMainMenu();
-        input = readInt(0, 3);
+        cin >> input;
         switch (input) {
             case 1:
                 cenarios();
@@ -56,7 +55,7 @@ void Menu::cenarios() {
     int input;
     do{
         drawCenarios();
-        input = readInt(0, 3);
+        cin >> input;
         switch (input) {
             case 1:
                 Menu::armazem.cenario1();
@@ -103,7 +102,7 @@ void Menu::loadFiles() {
     int input;
     do{
         drawLoadFiles();
-        input = readInt(0, 2);
+        cin >> input;
         switch (input) {
             case 1:
                 //ler ficheiro para carrinhas
@@ -128,25 +127,12 @@ void Menu::drawExit() {
 
 int Menu::exit() {
     drawExit();
-    if(readInt(0,1) == 0)
+    int input;
+    cin >> input;
+    if(input == 0)
         return 1;
     else
         return -1;
-}
-
-string Menu::readString() {
-    string input;
-    cin >> input;
-    return input;
-}
-
-int Menu::readInt(int min, int max) {
-    int input;
-    cin >> input;
-    if(input < min or input > max)
-        return -1;
-    else
-        return input;
 }
 
 const Armazem &Menu::getArmazem() const {

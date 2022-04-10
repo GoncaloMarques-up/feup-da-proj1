@@ -5,7 +5,9 @@
 #ifndef PROJETO_DA_MENU_H
 #define PROJETO_DA_MENU_H
 
-#include "string"
+#include <iostream>
+#include <string>
+
 #include "Armazem.h"
 
 using namespace std;
@@ -33,9 +35,6 @@ public:
 
     void drawExit();
     int exit();
-
-    string readString();
-    int readInt(int min, int max);
 
     const Armazem & getArmazem() const;
 
