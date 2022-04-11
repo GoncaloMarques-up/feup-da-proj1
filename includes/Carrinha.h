@@ -12,6 +12,10 @@ using namespace std;
 class Carrinha {
 private:
     unsigned int id, maxVol, maxPeso, custo;
+public:
+    unsigned int getId() const;
+
+    void setId(unsigned int id);
 
 public:
 

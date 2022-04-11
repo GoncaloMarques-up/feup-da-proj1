@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <list>
-
+#include <climits>
 #include "Encomenda.h"
 #include "Carrinha.h"
 
@@ -17,7 +17,7 @@ class Armazem {
 private:
     list<Encomenda> encomendas;
     list<Carrinha> carrinhas;
-
+    int lucro(list<Carrinha> custos, list<Encomenda> lucros);
 public:
     Armazem();
     Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas);
@@ -31,6 +31,7 @@ public:
     void cenario1();
     void cenario2();
     void cenario3();
+
 
 };
 

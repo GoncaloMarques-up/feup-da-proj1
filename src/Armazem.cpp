@@ -35,7 +35,39 @@ void Armazem::cenario1() {
 }
 
 void Armazem::cenario2() {
-    cout << "yeet";
+    /* ideias:
+     * "greedy": ordenar encomendas por recompensa(descendente) e estafetas por custo(ascendente) e inserir até alcançar o lucro maximo.
+     * outras possibilidades por definir.
+     */
+    carrinhas.sort([](const Carrinha &carrinha1, const Carrinha &carrinha2){
+        if(carrinha1.getCusto() == carrinha2.getCusto())
+            return carrinha1.getMaxPeso() < carrinha2.getMaxPeso();
+        return carrinha1.getCusto() < carrinha2.getCusto();
+    }); //lambda function (duvidas perguntem)
+
+
+    encomendas.sort([](const Encomenda &encomenda1, const Encomenda &encomenda2){
+        if(encomenda1.getRecompensa() == encomenda2.getRecompensa())
+            return encomenda1.getPeso() < encomenda2.getPeso();
+        return encomenda1.getRecompensa() > encomenda2.getRecompensa();
+    });
+
+    list<Carrinha> estafetas;
+    unsigned int currPeso = 0, currVol = 0;
+    int maxLucro = INT_MIN;
+
+
+}
+
+int Armazem::lucro(list<Carrinha> custos, list<Encomenda> lucros){
+    int positives = 0, negatives = 0;
+    for(auto custo : custos)
+        negatives += custo.getCusto();
+
+    for(auto lucro : lucros)
+        positives+= lucro.getRecompensa();
+
+    return positives-negatives;
 }
 
 void Armazem::cenario3() {

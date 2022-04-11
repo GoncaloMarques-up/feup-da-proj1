@@ -33,4 +33,12 @@ void Carrinha::setCusto(unsigned int custo) {
     Carrinha::custo = custo;
 }
 
+unsigned int Carrinha::getId() const {
+    return id;
+}
+
+void Carrinha::setId(unsigned int id) {
+    Carrinha::id = id;
+}
+
 

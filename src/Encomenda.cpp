@@ -40,6 +40,14 @@ void Encomenda::setPeso(unsigned int peso) {
     Encomenda::peso = peso;
 }
 
+unsigned int Encomenda::getId() const {
+    return id;
+}
+
+void Encomenda::setId(unsigned int id) {
+    Encomenda::id = id;
+}
+
 
 
 
