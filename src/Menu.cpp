@@ -3,9 +3,11 @@
 //
 
 #include "../includes/Menu.h"
+#include "../includes/FileReader.h"
 
-Menu::Menu() {
-}
+#include <utility>
+
+Menu::Menu(Armazem armazem) : armazem(std::move(armazem)) {}
 
 void Menu::run() {
     mainMenu();
@@ -100,15 +102,16 @@ void Menu::drawLoadFiles() {
 
 void Menu::loadFiles() {
     int input;
+    FileReader fr;
     do{
         drawLoadFiles();
         cin >> input;
         switch (input) {
             case 1:
-                //ler ficheiro para carrinhas
+                armazem.setCarrinhas(fr.GuardaCarrinhas());
                 break;
             case 2:
-                // ler ficheiro para encomendas
+                armazem.setEncomendas(fr.GuardaEncomendas());
                 break;
             case 0:
                 input = -1;
@@ -138,3 +141,5 @@ int Menu::exit() {
 const Armazem &Menu::getArmazem() const {
     return armazem;
 }
+
+

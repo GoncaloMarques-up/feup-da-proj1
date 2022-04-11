@@ -17,7 +17,8 @@ private:
     Armazem armazem;
 
 public:
-    Menu();
+
+    Menu(Armazem armazem);
 
     void run();
 

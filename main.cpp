@@ -1,8 +1,8 @@
 #include "includes/Menu.h"
 
 int main() {
-    //std::cout << "Hello, World!" << std::endl;
-    Menu m;
+    Armazem armazem;
+    Menu m(armazem);
     m.run();
     return 0;
 }
