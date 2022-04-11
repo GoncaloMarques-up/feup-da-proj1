@@ -11,10 +11,11 @@ using namespace std;
 
 class Carrinha {
 private:
-    unsigned int maxVol, maxPeso, custo;
+    unsigned int id, maxVol, maxPeso, custo;
 
 public:
-    Carrinha(unsigned int maxVol, unsigned int maxPeso, unsigned int custo);
+
+    Carrinha(unsigned int id, unsigned int maxVol, unsigned int maxPeso, unsigned int custo);
 
     unsigned int getMaxVol() const;
     void setMaxVol(unsigned int maxVol);

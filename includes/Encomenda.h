@@ -9,9 +9,9 @@
 class Encomenda {
 //TODO: adicionar remetente e destinario
 private:
-    unsigned int duration, recompensa, volume, peso;//escrevi duration pra n escrever duracao (sounds stupid)
+    unsigned int id, duration, recompensa, volume, peso;//escrevi duration pra n escrever duracao (sounds stupid)
 public:
-    Encomenda(unsigned int duration, unsigned int recompensa, unsigned int volume, unsigned int peso);
+    Encomenda(unsigned  int id ,unsigned int duration, unsigned int recompensa, unsigned int volume, unsigned int peso);
 
     unsigned int getDuration() const;
     void setDuration(unsigned int duration);

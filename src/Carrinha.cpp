@@ -6,8 +6,8 @@
 
 #include <utility>
 
-Carrinha::Carrinha(unsigned int maxVol, unsigned int maxPeso, unsigned int custo) :
-                    maxVol(maxVol), maxPeso(maxPeso), custo(custo) {}
+Carrinha::Carrinha(unsigned int id, unsigned int maxVol, unsigned int maxPeso, unsigned int custo) : id(id),
+                    maxVol(maxVol),maxPeso(maxPeso),custo(custo) {}
 
 unsigned int Carrinha::getMaxVol() const {
     return maxVol;

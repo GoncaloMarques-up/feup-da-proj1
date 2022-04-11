@@ -4,10 +4,10 @@
 
 #include "../includes/Encomenda.h"
 
-Encomenda::Encomenda(unsigned int duration, unsigned int recompensa, unsigned int volume, unsigned int peso) : duration(
-        duration), recompensa(recompensa), volume(volume), peso(peso) {}
-
-
+Encomenda::Encomenda(unsigned int id, unsigned int duration, unsigned int recompensa, unsigned int volume,
+                     unsigned int peso) : id(id), duration(duration), recompensa(recompensa), volume(volume),
+                     peso(peso) {}
+                     
 unsigned int Encomenda::getDuration() const {
     return duration;
 }
@@ -39,5 +39,9 @@ unsigned int Encomenda::getPeso() const {
 void Encomenda::setPeso(unsigned int peso) {
     Encomenda::peso = peso;
 }
+
+
+
+
 
 

@@ -12,6 +12,7 @@ list<Carrinha> FileReader::GuardaCarrinhas() {
     if(!loadEstafetas.is_open())
         exit(EXIT_FAILURE);
     string data;
+    int id = 0;
     getline(loadEstafetas, data);
     list<Carrinha> carrinhas;
     while(getline (loadEstafetas, data)){
@@ -24,7 +25,8 @@ list<Carrinha> FileReader::GuardaCarrinhas() {
         istringstream(token) >> pesoMax;
         getline(iss, token, '\n');
         istringstream(token) >> custo;
-        carrinhas.emplace_back(volMax, pesoMax, custo);
+        carrinhas.emplace_back(id, volMax, pesoMax, custo);
+        id++;
     }
     loadEstafetas.close();
     return carrinhas;
@@ -35,6 +37,7 @@ list<Encomenda> FileReader::GuardaEncomendas() {
     if(!loadEncomendas.is_open())
         exit(EXIT_FAILURE);
     string data;
+    int id = 0;
     getline(loadEncomendas, data);
     list<Encomenda> encomendas;
 
@@ -50,7 +53,8 @@ list<Encomenda> FileReader::GuardaEncomendas() {
         istringstream(token) >> recompensa;
         getline(iss, token, '\n');
         istringstream(token) >> duration;
-        encomendas.emplace_back(duration, recompensa, vol, peso);
+        encomendas.emplace_back(id, duration, recompensa, vol, peso);
+        id++;
     }
     loadEncomendas.close();
     return encomendas;
