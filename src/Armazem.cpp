@@ -9,25 +9,20 @@ Armazem::Armazem() {
     carrinhas = list<Carrinha>();
 }
 
-Armazem::Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas){
-    this->encomendas = encomendas;
-    this->carrinhas = carrinhas;
-}
-
 list<Encomenda> Armazem::getEncomendas() const {
     return encomendas;
 }
 
-void Armazem::setEncomendas(const list<Encomenda> &encomendas) {
-    Armazem::encomendas = encomendas;
+void Armazem::setEncomendas(const list<Encomenda> &entregas) {
+    Armazem::encomendas = entregas;
 }
 
 list<Carrinha> Armazem::getCarrinhas() const {
     return carrinhas;
 }
 
-void Armazem::setCarrinhas(const list<Carrinha> &carrinhas) {
-    Armazem::carrinhas = carrinhas;
+void Armazem::setCarrinhas(const list<Carrinha> &estafetas) {
+    Armazem::carrinhas = estafetas;
 }
 
 void Armazem::cenario1() {
@@ -53,13 +48,39 @@ void Armazem::cenario2() {
     });
 
     list<Carrinha> estafetas;
-    unsigned int currPeso = 0, currVol = 0;
+    list<Encomenda> entregas;
+
     int maxLucro = INT_MIN;
 
+    while(!carrinhas.empty()){
+        estafetas.push_back(carrinhas.front());
+        carrinhas.pop_front();
+         auto it = encomendas.begin();
+        unsigned int currPeso = 0, currVol = 0;
 
+        while(!encomendas.empty() && it != encomendas.end()){
+           if(currPeso + it->getPeso() <= estafetas.back().getMaxPeso() && currVol + it->getVolume() <= estafetas.back().getMaxVol()){
+                currPeso += it->getPeso();
+                currVol += it->getVolume();
+                entregas.push_back(*it);
+                it = encomendas.erase(it);
+             }
+           else
+               it++;
+        }
+        int currLucro = lucro(estafetas, entregas);
+        if(currLucro >= maxLucro)
+            maxLucro = currLucro;
+        else{
+            estafetas.pop_back();
+            break;
+        }
+    }
+    for(auto estafeta : estafetas)
+        cout << estafeta.getId() << endl;
 }
 
-int Armazem::lucro(list<Carrinha> custos, list<Encomenda> lucros){
+int Armazem::lucro(const list<Carrinha>& custos, const list<Encomenda>& lucros){
     int positives = 0, negatives = 0;
     for(auto custo : custos)
         negatives += custo.getCusto();

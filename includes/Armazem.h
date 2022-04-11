@@ -17,16 +17,15 @@ class Armazem {
 private:
     list<Encomenda> encomendas;
     list<Carrinha> carrinhas;
-    int lucro(list<Carrinha> custos, list<Encomenda> lucros);
+    static int lucro(const list<Carrinha>& custos, const list<Encomenda>& lucros);
 public:
     Armazem();
-    Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas);
 
     list<Encomenda> getEncomendas() const;
-    void setEncomendas(const list<Encomenda> &encomendas);
+    void setEncomendas(const list<Encomenda> &entregas);
 
     list<Carrinha> getCarrinhas() const;
-    void setCarrinhas(const list<Carrinha> &carrinhas);
+    void setCarrinhas(const list<Carrinha> &estafetas);
 
     void cenario1();
     void cenario2();
