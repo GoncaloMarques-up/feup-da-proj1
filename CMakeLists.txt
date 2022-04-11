@@ -8,5 +8,5 @@ add_executable(
         src/Carrinha.cpp includes/Carrinha.h
         src/Armazem.cpp includes/Armazem.h
         src/Encomenda.cpp includes/Encomenda.h
-        )
-
+        src/FileReader.cpp includes/FileReader.h
+        src/Menu.cpp includes/Menu.h)

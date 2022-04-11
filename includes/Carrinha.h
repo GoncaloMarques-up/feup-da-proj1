@@ -13,14 +13,11 @@ using namespace std;
 
 class Carrinha {
 private:
-    unsigned int matricula, maxVol, maxPeso, custo;
+    unsigned int maxVol, maxPeso, custo;
     list<Encomenda> enconmendas;
 
 public:
-    Carrinha(unsigned int matricula, unsigned int maxVol, unsigned int maxPeso, unsigned int custo);
-
-    const unsigned int &getMatricula() const;
-    void setMatricula(const unsigned int &matricula);
+    Carrinha(unsigned int maxVol, unsigned int maxPeso, unsigned int custo);
 
     unsigned int getMaxVol() const;
     void setMaxVol(unsigned int maxVol);

@@ -17,18 +17,16 @@ class Armazem {
 private:
     list<Encomenda> encomendas;
     list<Carrinha> carrinhas;
-    const float lucro_threshold = 5.0;
 
 public:
-    Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas, float lucroThreshold);
+    Armazem();
+    Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas);
 
     list<Encomenda> getEncomendas() const;
     void setEncomendas(const list<Encomenda> &encomendas);
 
-    const list<Carrinha> &getCarrinhas() const;
+    list<Carrinha> getCarrinhas() const;
     void setCarrinhas(const list<Carrinha> &carrinhas);
-
-    float getLucroThreshold() const;
 
     void cenario1();
     void cenario2();

@@ -6,16 +6,8 @@
 
 #include <utility>
 
-Carrinha::Carrinha(unsigned int matricula, unsigned int maxVol, unsigned int maxPeso, unsigned int custo) :
-                    matricula(matricula), maxVol(maxVol), maxPeso(maxPeso), custo(custo) {}
-
-const unsigned int &Carrinha::getMatricula() const {
-    return matricula;
-}
-
-void Carrinha::setMatricula(const unsigned int &matricula) {
-    Carrinha::matricula = matricula;
-}
+Carrinha::Carrinha(unsigned int maxVol, unsigned int maxPeso, unsigned int custo) :
+                    maxVol(maxVol), maxPeso(maxPeso), custo(custo) {}
 
 unsigned int Carrinha::getMaxVol() const {
     return maxVol;
