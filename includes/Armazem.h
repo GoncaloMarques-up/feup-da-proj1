@@ -31,7 +31,11 @@ public:
     list<Carrinha> sortCarrinhasPeso(list<Carrinha> carrinhas);
     list<Encomenda> sortEnconmendasPeso(list<Encomenda> encomendas);
 
-    void cenario1();
+    list<Carrinha> sortCarrinhasVolume(list<Carrinha> carrinhas);
+    list<Encomenda> sortEnconmendasVolume(list<Encomenda> encomendas);
+
+
+    int cenario1();
     void cenario2();
     void cenario3();
 

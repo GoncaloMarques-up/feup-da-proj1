@@ -25,12 +25,8 @@ int main() {
 
     armazem.setCarrinhas(carrinhas);
     armazem.setEncomendas(encomendas);
-    armazem.cenario1();
+    cout << armazem.cenario1();
 
-    for (auto &carrinha : armazem.getCarrinhas()){
-        for (auto &encomenda : carrinha.getEncomendas()){
-            cout << carrinha.getMaxPeso() << " " << encomenda.getPeso() << endl;
-        }
-    }
+
     return 0;
 }
