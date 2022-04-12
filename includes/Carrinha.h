@@ -30,6 +30,7 @@ public:
 
     void addEnconmenda(Encomenda encomenda);
     int getNumEncomendas();
+    list<Encomenda> getEncomendas();
 };
 
 

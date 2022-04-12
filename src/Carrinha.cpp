@@ -41,4 +41,7 @@ int Carrinha::getNumEncomendas() {
     return enconmendas.size();
 }
 
+list<Encomenda> Carrinha::getEncomendas() {
+    return enconmendas;
+}
 

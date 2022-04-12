@@ -28,6 +28,9 @@ public:
     list<Carrinha> getCarrinhas() const;
     void setCarrinhas(const list<Carrinha> &carrinhas);
 
+    list<Carrinha> sortCarrinhasPeso(list<Carrinha> carrinhas);
+    list<Encomenda> sortEnconmendasPeso(list<Encomenda> encomendas);
+
     void cenario1();
     void cenario2();
     void cenario3();
