@@ -4,7 +4,6 @@
 
 #include "../includes/Carrinha.h"
 
-#include <utility>
 
 Carrinha::Carrinha(unsigned int id, unsigned int maxVol, unsigned int maxPeso, unsigned int custo) : id(id),
                     maxVol(maxVol),maxPeso(maxPeso),custo(custo) {}

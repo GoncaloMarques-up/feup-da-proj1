@@ -3,13 +3,14 @@
 //
 
 #include "../includes/Menu.h"
-#include "../includes/FileReader.h"
 
 #include <utility>
 
 Menu::Menu(Armazem armazem) : armazem(std::move(armazem)) {}
 
 void Menu::run() {
+    armazem.setEncomendas(fileReader.GuardaEncomendas());
+    armazem.setCarrinhas(fileReader.GuardaCarrinhas());
     mainMenu();
 }
 
@@ -17,7 +18,6 @@ void Menu::drawMainMenu() {
     cout << "-------------- Design de Algoritmos - 2021/22 --------------" << endl;
     cout << "1 - Cenarios" << endl;
     cout << "2 - DevTeam" << endl;
-    cout << "3 - Carregar Ficheiros" << endl << endl;
     cout << "0 - Sair" << endl << endl;
 }
 
@@ -32,9 +32,6 @@ void Menu::mainMenu() {
                 break;
             case 2:
                 devTeam();
-                break;
-            case 3:
-                loadFiles();
                 break;
             case 0:
                 input = exit();
@@ -91,37 +88,6 @@ void Menu::devTeam() {
     cin >> input;
 }
 
-
-void Menu::drawLoadFiles() {
-    cout << "----------------- Load File -----------------" << endl;
-    cout << "1 - Carrinhas" << endl;
-    cout << "2 - Encomendas" << endl << endl;
-
-    cout << "0 - Sair" << endl << endl;
-}
-
-void Menu::loadFiles() {
-    int input;
-    FileReader fr;
-    do{
-        drawLoadFiles();
-        cin >> input;
-        switch (input) {
-            case 1:
-                armazem.setCarrinhas(fr.GuardaCarrinhas());
-                break;
-            case 2:
-                armazem.setEncomendas(fr.GuardaEncomendas());
-                break;
-            case 0:
-                input = -1;
-                break;
-            default:
-                input = 0;
-        }
-    } while (input!=-1);
-}
-
 void Menu::drawExit() {
     cout << "Pretende Mesmo Sair?" << endl;
     cout << "1 - Sim" << endl;
@@ -137,9 +103,3 @@ int Menu::exit() {
     else
         return -1;
 }
-
-const Armazem &Menu::getArmazem() const {
-    return armazem;
-}
-
-

@@ -9,15 +9,16 @@
 #include <string>
 
 #include "Armazem.h"
+#include "FileReader.h"
 
 using namespace std;
 
 class Menu {
 private:
     Armazem armazem;
+    FileReader fileReader;
 
 public:
-
     Menu(Armazem armazem);
 
     void run();
@@ -31,13 +32,8 @@ public:
     void drawDevTeam();
     void devTeam();
 
-    void drawLoadFiles();
-    void loadFiles();
-
     void drawExit();
     int exit();
-
-    const Armazem & getArmazem() const;
 
 };
 
