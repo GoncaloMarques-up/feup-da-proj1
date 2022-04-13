@@ -2,6 +2,7 @@
 // Created by ASUS on 02/04/2022.
 //
 
+#include <algorithm>
 #include "../includes/Armazem.h"
 
 Armazem::Armazem() {
@@ -29,23 +30,25 @@ void Armazem::cenario1() {
     cout << "yeet";
 }
 
+bool c2CarrinhaSort(const Carrinha &carrinha1, const Carrinha &carrinha2){
+    if(carrinha1.getCusto() == carrinha2.getCusto())
+        return carrinha1.getMaxPeso() < carrinha2.getMaxPeso();
+    return carrinha1.getCusto() < carrinha2.getCusto();
+}
+
+bool c2EncomendasSort(const Encomenda &encomenda1, const Encomenda &encomenda2){
+    if(encomenda1.getRecompensa() == encomenda2.getRecompensa())
+        return encomenda1.getPeso() < encomenda2.getPeso();
+    return encomenda1.getRecompensa() > encomenda2.getRecompensa();
+}
+
 void Armazem::cenario2() {
     /* ideias:
      * "greedy": ordenar encomendas por recompensa(descendente) e estafetas por custo(ascendente) e inserir até alcançar o lucro maximo.
      * outras possibilidades por definir.
      */
-    carrinhas.sort([](const Carrinha &carrinha1, const Carrinha &carrinha2){
-        if(carrinha1.getCusto() == carrinha2.getCusto())
-            return carrinha1.getMaxPeso() < carrinha2.getMaxPeso();
-        return carrinha1.getCusto() < carrinha2.getCusto();
-    }); //lambda function (duvidas perguntem)
-
-
-    encomendas.sort([](const Encomenda &encomenda1, const Encomenda &encomenda2){
-        if(encomenda1.getRecompensa() == encomenda2.getRecompensa())
-            return encomenda1.getPeso() < encomenda2.getPeso();
-        return encomenda1.getRecompensa() > encomenda2.getRecompensa();
-    });
+    carrinhas.sort(c2CarrinhaSort);
+    encomendas.sort(c2EncomendasSort);
 
     list<Carrinha> estafetas;
     list<Encomenda> entregas;
