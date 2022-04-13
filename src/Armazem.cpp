@@ -181,6 +181,39 @@ int Armazem::lucro(const list<Carrinha>& custos, const list<Encomenda>& lucros){
     return positives-negatives;
 }
 
-void Armazem::cenario3() {
-    cout << "yeet";
+
+bool c3Sort(const Encomenda &encomenda1, const Encomenda &encomenda2){
+    return encomenda1.getDuration() < encomenda2.getDuration();
+}
+
+void Armazem::cenario3(int dia) {
+    // 8 horas = 480 min = 28800 seg
+    list<int> time;
+    int total = 0, current, workHours = 28800, totalEncomendas = encomendas.size(), tempoAcumulado = 0;
+
+    encomendas.sort(c3Sort);
+    auto it = encomendas.begin();
+
+    while(total <= workHours && it != encomendas.end()){
+        current = it->getDuration();
+        if(total + current > workHours)
+            break;
+        total += current;
+        time.push_back(current);
+        it = encomendas.erase(it);
+
+    }
+
+    int tam = time.size();
+
+    for(auto it1 = time.begin(); it1!=time.end(); it1++)
+        for(auto it2 = it1; it2!=time.begin(); it2--)
+            tempoAcumulado += *it2;
+
+    cout << "Dia "<< dia << endl;
+    cout << "Numero de Encomendas Entregues: " << tam << endl;
+    cout << "Numero de Encomendas Total: " << totalEncomendas << endl;
+    cout << "Perc. de Encomendas Entregues: " << (double) tam/totalEncomendas * 100 << "%" << endl;
+    cout << "Tempo Acumulado: " << tempoAcumulado << endl;
+    cout << "Tempo Medio: "<< (double) tempoAcumulado/tam << endl << endl;
 }

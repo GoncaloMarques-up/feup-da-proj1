@@ -61,14 +61,14 @@ void Menu::cenarios() {
                 Menu::armazem.cenario2();
                 break;
             case 3:
-                int dia = 1;
+                int dia = 0;
                 do{
+                    dia++;
                     Menu::armazem.cenario3(dia);
                     cout << "Pretende continuar?" << endl;
                     cout << "1 - Sim" << endl;
                     cout << "2 - Nao" << endl;
                     cin >> input;
-                    dia++;
                 }while(input!=2 && !armazem.getEncomendas().empty());
                 if(armazem.getEncomendas().empty()){
                     cout << "Todas as Encomendas Foram entregues ao fim de " << dia << " dias." << endl;

@@ -30,8 +30,7 @@ public:
 
     void cenario1();
     void cenario2();
-    void cenario3();
-
+    void cenario3(int dia);
 
 };
 
