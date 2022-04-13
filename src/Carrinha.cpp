@@ -32,6 +32,19 @@ void Carrinha::setCusto(unsigned int custo) {
     Carrinha::custo = custo;
 }
 
+
+void Carrinha::addEnconmenda(Encomenda encomenda) {
+    enconmendas.push_back(encomenda);
+}
+
+int Carrinha::getNumEncomendas() {
+    return enconmendas.size();
+}
+
+list<Encomenda> Carrinha::getEncomendas() {
+    return enconmendas;
+}
+
 unsigned int Carrinha::getId() const {
     return id;
 }
@@ -39,5 +52,6 @@ unsigned int Carrinha::getId() const {
 void Carrinha::setId(unsigned int id) {
     Carrinha::id = id;
 }
+
 
 

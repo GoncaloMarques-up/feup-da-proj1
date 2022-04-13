@@ -6,16 +6,22 @@
 #define PROJETO_DA_CARRINHA_H
 
 #include <iostream>
+#include <list>
+#include "Encomenda.h"
 
 using namespace std;
 
 class Carrinha {
 private:
+
+    list<Encomenda> enconmendas;
+
     unsigned int id, maxVol, maxPeso, custo;
 public:
     unsigned int getId() const;
 
     void setId(unsigned int id);
+
 
 public:
 
@@ -29,6 +35,10 @@ public:
 
     unsigned int getCusto() const;
     void setCusto(unsigned int custo);
+
+    void addEnconmenda(Encomenda encomenda);
+    int getNumEncomendas();
+    list<Encomenda> getEncomendas();
 };
 
 

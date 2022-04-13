@@ -27,6 +27,7 @@ public:
     list<Carrinha> getCarrinhas() const;
     void setCarrinhas(const list<Carrinha> &estafetas);
 
+
     void cenario1();
     void cenario2();
     void cenario3();
