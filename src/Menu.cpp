@@ -9,8 +9,6 @@
 Menu::Menu(Armazem armazem) : armazem(std::move(armazem)) {}
 
 void Menu::run() {
-    armazem.setEncomendas(fileReader.GuardaEncomendas());
-    armazem.setCarrinhas(fileReader.GuardaCarrinhas());
     mainMenu();
 }
 
@@ -51,6 +49,8 @@ void Menu::drawCenarios() {
 }
 
 void Menu::cenarios() {
+    armazem.setEncomendas(fileReader.GuardaEncomendas());
+    armazem.setCarrinhas(fileReader.GuardaCarrinhas());
     int input;
     do{
         drawCenarios();
