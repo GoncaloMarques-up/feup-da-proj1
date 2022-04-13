@@ -4,8 +4,9 @@
 
 #include "../includes/Menu.h"
 
-Menu::Menu() {
-}
+#include <utility>
+
+Menu::Menu(Armazem armazem) : armazem(std::move(armazem)) {}
 
 void Menu::run() {
     mainMenu();
@@ -15,7 +16,6 @@ void Menu::drawMainMenu() {
     cout << "-------------- Design de Algoritmos - 2021/22 --------------" << endl;
     cout << "1 - Cenarios" << endl;
     cout << "2 - DevTeam" << endl;
-    cout << "3 - Carregar Ficheiros" << endl << endl;
     cout << "0 - Sair" << endl << endl;
 }
 
@@ -30,9 +30,6 @@ void Menu::mainMenu() {
                 break;
             case 2:
                 devTeam();
-                break;
-            case 3:
-                loadFiles();
                 break;
             case 0:
                 input = exit();
@@ -52,6 +49,8 @@ void Menu::drawCenarios() {
 }
 
 void Menu::cenarios() {
+    armazem.setEncomendas(fileReader.GuardaEncomendas());
+    armazem.setCarrinhas(fileReader.GuardaCarrinhas());
     int input;
     do{
         drawCenarios();
@@ -89,36 +88,6 @@ void Menu::devTeam() {
     cin >> input;
 }
 
-
-void Menu::drawLoadFiles() {
-    cout << "----------------- Load File -----------------" << endl;
-    cout << "1 - Carrinhas" << endl;
-    cout << "2 - Encomendas" << endl << endl;
-
-    cout << "0 - Sair" << endl << endl;
-}
-
-void Menu::loadFiles() {
-    int input;
-    do{
-        drawLoadFiles();
-        cin >> input;
-        switch (input) {
-            case 1:
-                //ler ficheiro para carrinhas
-                break;
-            case 2:
-                // ler ficheiro para encomendas
-                break;
-            case 0:
-                input = -1;
-                break;
-            default:
-                input = 0;
-        }
-    } while (input!=-1);
-}
-
 void Menu::drawExit() {
     cout << "Pretende Mesmo Sair?" << endl;
     cout << "1 - Sim" << endl;
@@ -133,8 +102,4 @@ int Menu::exit() {
         return 1;
     else
         return -1;
-}
-
-const Armazem &Menu::getArmazem() const {
-    return armazem;
 }
