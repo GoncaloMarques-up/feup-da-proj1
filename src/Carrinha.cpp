@@ -4,10 +4,9 @@
 
 #include "../includes/Carrinha.h"
 
-#include <utility>
 
-Carrinha::Carrinha(unsigned int maxVol, unsigned int maxPeso, unsigned int custo) :
-                    maxVol(maxVol), maxPeso(maxPeso), custo(custo) {}
+Carrinha::Carrinha(unsigned int id, unsigned int maxVol, unsigned int maxPeso, unsigned int custo) : id(id),
+                    maxVol(maxVol),maxPeso(maxPeso),custo(custo) {}
 
 unsigned int Carrinha::getMaxVol() const {
     return maxVol;
@@ -33,6 +32,7 @@ void Carrinha::setCusto(unsigned int custo) {
     Carrinha::custo = custo;
 }
 
+
 void Carrinha::addEnconmenda(Encomenda encomenda) {
     enconmendas.push_back(encomenda);
 }
@@ -44,4 +44,14 @@ int Carrinha::getNumEncomendas() {
 list<Encomenda> Carrinha::getEncomendas() {
     return enconmendas;
 }
+
+unsigned int Carrinha::getId() const {
+    return id;
+}
+
+void Carrinha::setId(unsigned int id) {
+    Carrinha::id = id;
+}
+
+
 

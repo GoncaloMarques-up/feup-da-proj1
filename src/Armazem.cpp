@@ -2,6 +2,7 @@
 // Created by ASUS on 02/04/2022.
 //
 
+#include <algorithm>
 #include "../includes/Armazem.h"
 
 Armazem::Armazem() {
@@ -9,169 +10,58 @@ Armazem::Armazem() {
     carrinhas = list<Carrinha>();
 }
 
-Armazem::Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas){
-    this->encomendas = encomendas;
-    this->carrinhas = carrinhas;
-}
-
 list<Encomenda> Armazem::getEncomendas() const {
     return encomendas;
 }
 
-void Armazem::setEncomendas(const list<Encomenda> &encomendas) {
-    Armazem::encomendas = encomendas;
+void Armazem::setEncomendas(const list<Encomenda> &entregas) {
+    Armazem::encomendas = entregas;
 }
 
 list<Carrinha> Armazem::getCarrinhas() const {
     return carrinhas;
 }
 
-void Armazem::setCarrinhas(const list<Carrinha> &carrinhas) {
-    Armazem::carrinhas = carrinhas;
+void Armazem::setCarrinhas(const list<Carrinha> &estafetas) {
+    Armazem::carrinhas = estafetas;
 }
 
 
-list<Carrinha> Armazem::sortCarrinhasPeso(list<Carrinha> carrinhas) {
-    //using mergeSort
-//    if (carrinhas.size() == 1) return carrinhas;
-//    int mid = carrinhas.size()/2;
-//    list<Carrinha> final;
-//    list<Carrinha> listCarr1;
-//    list<Carrinha> listCarr2;
-//
-//    for (int i =0;i<mid;i++){
-//        listCarr1.push_back(carrinhas.front());
-//        carrinhas.pop_front();
-//    }
-//
-//    for (int i =mid;i<mid*2;i++){
-//        listCarr2.push_back(carrinhas.front());
-//        carrinhas.pop_back();
-//    }
-//
-//    listCarr1=this->sortCarrinhasPeso(listCarr1);
-//    listCarr2=this->sortCarrinhasPeso(listCarr2);
-//    auto it1 = listCarr1.begin();
-//    auto it2 = listCarr2.begin();
-//
-//    while(!listCarr1.empty() || !listCarr2.empty()){
-//        if (it1->getMaxPeso()>it2->getMaxPeso()){
-//            final.push_back(*it1);
-//            listCarr1.erase(it1);
-//            it1 = listCarr1.begin();
-//        } else {
-//            final.push_back(*it2);
-//            listCarr2.erase(it2);
-//            it2 = listCarr2.begin();
-//        }
-//    }
-//
-//    return final;
+bool sortCarrinhasPeso(const Carrinha &carrinha1, const Carrinha &carrinha2) {
+    return carrinha1.getMaxPeso()>carrinha2.getMaxPeso();
 
-// naive
-    list<Carrinha> final;
-
-    while (!carrinhas.empty()) {
-        int count =0;
-        int mcount = 0;
-        Carrinha max = carrinhas.front();
-        for (auto &carrinha: carrinhas) {
-            if (carrinha.getMaxPeso() > max.getMaxPeso()) {
-                max = carrinha;
-                mcount = count;
-            }
-            count++;
-        }
-        auto it = carrinhas.begin();
-        advance(it,mcount);
-        carrinhas.erase(it);
-        final.push_back(max);
-    }
-    return final;
 }
 
-list<Encomenda> Armazem::sortEnconmendasPeso(list<Encomenda> encomendas) {
-    list<Encomenda> final;
-
-    while (!encomendas.empty()) {
-        int count =0;
-        int mcount = 0;
-        Encomenda max = encomendas.front();
-        for (auto &encomenda: encomendas) {
-            if (encomenda.getPeso() > max.getPeso()) {
-                max = encomenda;
-                mcount = count;
-            }
-            count++;
-        }
-        auto it = encomendas.begin();
-        advance(it,mcount);
-        encomendas.erase(it);
-        final.push_back(max);
-    }
-    return final;
+bool sortEnconmendasPeso(const Encomenda &encomenda1, const Encomenda &encomenda2) {
+    return encomenda1.getPeso()>encomenda2.getPeso();
 }
 
-list<Carrinha> Armazem::sortCarrinhasVolume(list<Carrinha> carrinhas) {
-    list<Carrinha> final;
-    while (!carrinhas.empty()) {
-        int count =0;
-        int mcount = 0;
-        Carrinha max = carrinhas.front();
-        for (auto &carrinha: carrinhas) {
-            if (carrinha.getMaxVol() > max.getMaxVol()) {
-                max = carrinha;
-                mcount = count;
-            }
-            count++;
-        }
-        auto it = carrinhas.begin();
-        advance(it,mcount);
-        carrinhas.erase(it);
-        final.push_back(max);
-    }
-    return final;
+bool sortCarrinhasVolume(const Carrinha &carrinha1, const Carrinha &carrinha2) {
+    return carrinha1.getMaxVol()>carrinha2.getMaxPeso();
 }
 
-list<Encomenda> Armazem::sortEnconmendasVolume(list<Encomenda> encomendas) {
-    list<Encomenda> final;
-
-    while (!encomendas.empty()) {
-        int count =0;
-        int mcount = 0;
-        Encomenda max = encomendas.front();
-        for (auto &encomenda: encomendas) {
-            if (encomenda.getVolume() > max.getVolume()) {
-                max = encomenda;
-                mcount = count;
-            }
-            count++;
-        }
-        auto it = encomendas.begin();
-        advance(it,mcount);
-        encomendas.erase(it);
-        final.push_back(max);
-    }
-    return final;
+bool sortEnconmendasVolume(const Encomenda &encomenda1, const Encomenda &encomenda2) {
+    return encomenda1.getVolume()>encomenda2.getVolume();
 }
 
-int Armazem::cenario1() {
-    list<Carrinha> carrinhas1 = carrinhas;
-    list<Encomenda> encomendas1 = encomendas;
+void Armazem::cenario1() {
     int volRem;
     int pesRem;
-    carrinhas1 = this->sortCarrinhasPeso(carrinhas1);
-    encomendas1 =  this->sortEnconmendasPeso(encomendas1);
+    carrinhas.sort(sortCarrinhasVolume);
+    encomendas.sort(sortEnconmendasVolume);
+    list<Carrinha> carrinhas1 = carrinhas;
+    list<Encomenda> encomendas1 = encomendas;
     for (auto &carrinha :carrinhas1){
         auto it = encomendas1.begin();
         volRem = carrinha.getMaxVol();
         pesRem =carrinha.getMaxPeso();
         for (auto &encomenda : encomendas1){
+            if (volRem == 0 || pesRem == 0) break;
             if (volRem>=encomenda.getVolume() && pesRem>=encomenda.getPeso()){
                 volRem -= encomenda.getVolume();
                 pesRem -= encomenda.getPeso();
-                encomendas1.erase(it);
                 carrinha.addEnconmenda(encomenda);
+                encomendas1.erase(it);
             }
             it++;
         }
@@ -179,22 +69,24 @@ int Armazem::cenario1() {
     int res1 =0;
     for (auto &carrinha :carrinhas1){
         if (!carrinha.getEncomendas().empty()) res1++;
+        else break;
     }
-
+    carrinhas.sort(sortCarrinhasPeso);
+    encomendas.sort(sortEnconmendasPeso);
     list<Carrinha> carrinhas2 = carrinhas;
     list<Encomenda> encomendas2 = encomendas;
-    carrinhas2 = this->sortCarrinhasVolume(carrinhas2);
-    encomendas2 =  this->sortEnconmendasVolume(encomendas2);
+
     for (auto &carrinha :carrinhas2){
         auto it = encomendas2.begin();
         volRem = carrinha.getMaxVol();
         pesRem =carrinha.getMaxPeso();
         for (auto &encomenda : encomendas2){
+            if (volRem == 0 || pesRem == 0) break;
             if (volRem>=encomenda.getVolume() && pesRem>=encomenda.getPeso()){
                 volRem -= encomenda.getVolume();
                 pesRem -= encomenda.getPeso();
-                encomendas2.erase(it);
                 carrinha.addEnconmenda(encomenda);
+                encomendas2.erase(it);
             }
             it++;
         }
@@ -202,14 +94,86 @@ int Armazem::cenario1() {
     int res2 =0;
     for (auto &carrinha :carrinhas2){
         if (!carrinha.getEncomendas().empty()) res2 ++;
+        else break;
     }
 
-    if (res1 < res2) return res1;
-    return res2;
+    if (res1 < res2){
+        for (auto &carrinha :carrinhas1){
+            if (!carrinha.getEncomendas().empty()) cout << carrinha.getId() << endl;
+            else  break;
+        }
+    } else {
+        for (auto &carrinha :carrinhas2){
+            if (!carrinha.getEncomendas().empty()) cout << carrinha.getId() << endl;
+            else  break;
+        }
+    }
+
+
+}
+
+bool c2CarrinhaSort(const Carrinha &carrinha1, const Carrinha &carrinha2){
+    if(carrinha1.getCusto() == carrinha2.getCusto())
+        return carrinha1.getMaxPeso() < carrinha2.getMaxPeso();
+    return carrinha1.getCusto() < carrinha2.getCusto();
+}
+
+bool c2EncomendasSort(const Encomenda &encomenda1, const Encomenda &encomenda2){
+    if(encomenda1.getRecompensa() == encomenda2.getRecompensa())
+        return encomenda1.getPeso() < encomenda2.getPeso();
+    return encomenda1.getRecompensa() > encomenda2.getRecompensa();
 }
 
 void Armazem::cenario2() {
-    cout << "yeet";
+    /* ideias:
+     * "greedy": ordenar encomendas por recompensa(descendente) e estafetas por custo(ascendente) e inserir até alcançar o lucro maximo.
+     * outras possibilidades por definir.
+     */
+    carrinhas.sort(c2CarrinhaSort);
+    encomendas.sort(c2EncomendasSort);
+
+    list<Carrinha> estafetas;
+    list<Encomenda> entregas;
+
+    int maxLucro = INT_MIN;
+
+    while(!carrinhas.empty()){
+        estafetas.push_back(carrinhas.front());
+        carrinhas.pop_front();
+         auto it = encomendas.begin();
+        unsigned int currPeso = 0, currVol = 0;
+
+        while(!encomendas.empty() && it != encomendas.end()){
+           if(currPeso + it->getPeso() <= estafetas.back().getMaxPeso() && currVol + it->getVolume() <= estafetas.back().getMaxVol()){
+                currPeso += it->getPeso();
+                currVol += it->getVolume();
+                entregas.push_back(*it);
+                it = encomendas.erase(it);
+             }
+           else
+               it++;
+        }
+        int currLucro = lucro(estafetas, entregas);
+        if(currLucro >= maxLucro)
+            maxLucro = currLucro;
+        else{
+            estafetas.pop_back();
+            break;
+        }
+    }
+    for(auto estafeta : estafetas)
+        cout << estafeta.getId() << endl;
+}
+
+int Armazem::lucro(const list<Carrinha>& custos, const list<Encomenda>& lucros){
+    int positives = 0, negatives = 0;
+    for(auto custo : custos)
+        negatives += custo.getCusto();
+
+    for(auto lucro : lucros)
+        positives+= lucro.getRecompensa();
+
+    return positives-negatives;
 }
 
 void Armazem::cenario3() {

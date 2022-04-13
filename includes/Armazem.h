@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <list>
-
+#include <climits>
 #include "Encomenda.h"
 #include "Carrinha.h"
 
@@ -17,27 +17,21 @@ class Armazem {
 private:
     list<Encomenda> encomendas;
     list<Carrinha> carrinhas;
-
+    static int lucro(const list<Carrinha>& custos, const list<Encomenda>& lucros);
 public:
     Armazem();
-    Armazem(list<Encomenda> &encomendas, list<Carrinha> &carrinhas);
 
     list<Encomenda> getEncomendas() const;
-    void setEncomendas(const list<Encomenda> &encomendas);
+    void setEncomendas(const list<Encomenda> &entregas);
 
     list<Carrinha> getCarrinhas() const;
-    void setCarrinhas(const list<Carrinha> &carrinhas);
-
-    list<Carrinha> sortCarrinhasPeso(list<Carrinha> carrinhas);
-    list<Encomenda> sortEnconmendasPeso(list<Encomenda> encomendas);
-
-    list<Carrinha> sortCarrinhasVolume(list<Carrinha> carrinhas);
-    list<Encomenda> sortEnconmendasVolume(list<Encomenda> encomendas);
+    void setCarrinhas(const list<Carrinha> &estafetas);
 
 
-    int cenario1();
+    void cenario1();
     void cenario2();
     void cenario3();
+
 
 };
 
