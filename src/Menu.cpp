@@ -34,10 +34,8 @@ void Menu::mainMenu() {
             case 0:
                 input = exit();
                 break;
-            default:
-                input = 0;
         }
-    } while (input!=-1);
+    } while (input!=0);
 }
 
 void Menu::drawCenarios() {
@@ -63,15 +61,21 @@ void Menu::cenarios() {
                 Menu::armazem.cenario2();
                 break;
             case 3:
-                Menu::armazem.cenario3();
+                int dia = 1;
+                do{
+                    Menu::armazem.cenario3(dia);
+                    cout << "Pretende continuar?" << endl;
+                    cout << "1 - Sim" << endl;
+                    cout << "2 - Nao" << endl;
+                    cin >> input;
+                    dia++;
+                }while(input!=2 && !armazem.getEncomendas().empty());
+                if(armazem.getEncomendas().empty()){
+                    cout << "Todas as Encomendas Foram entregues ao fim de " << dia << " dias." << endl;
+                }
                 break;
-            case 0:
-                input = -1;
-                break;
-            default:
-                input = 0;
         }
-    } while (input!=-1);
+    } while (input!=0);
 }
 
 void Menu::drawDevTeam() {
@@ -98,8 +102,5 @@ int Menu::exit() {
     drawExit();
     int input;
     cin >> input;
-    if(input == 0)
-        return 1;
-    else
-        return -1;
+    return input;
 }
