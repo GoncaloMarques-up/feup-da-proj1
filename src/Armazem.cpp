@@ -18,169 +18,135 @@ void Armazem::setEncomendas(const list<Encomenda> &entregas) {
     Armazem::encomendas = entregas;
 }
 
-list<Carrinha> Armazem::getCarrinhas() const {
-    return carrinhas;
-}
-
 void Armazem::setCarrinhas(const list<Carrinha> &estafetas) {
     Armazem::carrinhas = estafetas;
 }
 
-
-//bool sortCarrinhasPeso(const Carrinha &carrinha1, const Carrinha &carrinha2) {
-//    return carrinha1.getMaxPeso()>carrinha2.getMaxPeso();
-//
-//}
-//
-//bool sortEnconmendasPeso(const Encomenda &encomenda1, const Encomenda &encomenda2) {
-//    return encomenda1.getPeso()>encomenda2.getPeso();
-//}
-
-bool sortCarrinhasVolume(const Carrinha &carrinha1, const Carrinha &carrinha2) {
-    return carrinha1.getMaxVol()>carrinha2.getMaxPeso();
+bool c1SortCarrinhas(const Carrinha &carrinha1, const Carrinha &carrinha2) {
+    return carrinha1.getMaxVol() + carrinha1.getMaxPeso() > carrinha2.getMaxVol() + carrinha2.getMaxPeso();
 }
 
-bool sortEnconmendasVolume(const Encomenda &encomenda1, const Encomenda &encomenda2) {
-    return encomenda1.getVolume()>encomenda2.getVolume();
+bool c1SortEncomendas(const Encomenda &encomenda1, const Encomenda &encomenda2) {
+    return encomenda1.getVolume() + encomenda1.getPeso() < encomenda2.getVolume() + encomenda2.getPeso();
 }
 
-void Armazem::cenario1() {
-    int volRem;
-    int pesRem;
-    carrinhas.sort(sortCarrinhasVolume);
-    encomendas.sort(sortEnconmendasVolume);
-    list<Carrinha> carrinhas1 = carrinhas;
-    list<Encomenda> encomendas1 = encomendas;
-    for (auto &carrinha :carrinhas1){
-        auto it = encomendas1.begin();
+void Armazem::cenario1(){
+    unsigned int volRem;
+    unsigned int pesoRem;
+    unsigned int numCarrinhas = 0;
+    carrinhas.sort(c1SortCarrinhas);
+    encomendas.sort(c1SortEncomendas);
+    for(auto &carrinha : carrinhas){
+        if(encomendas.empty())
+            break;
+
         volRem = carrinha.getMaxVol();
-        pesRem =carrinha.getMaxPeso();
-        for (auto &encomenda : encomendas1){
-            if (volRem == 0 || pesRem == 0) break;
-            if (volRem>=encomenda.getVolume() && pesRem>=encomenda.getPeso()){
-                volRem -= encomenda.getVolume();
-                pesRem -= encomenda.getPeso();
-                carrinha.addEnconmenda(encomenda);
-                encomendas1.erase(it);
+        pesoRem = carrinha.getMaxPeso();
+        auto it = encomendas.begin();
+        while(!encomendas.empty() && it != encomendas.end()){
+            if(!volRem || !pesoRem)
+                break;
+            if(it->getPeso() <= pesoRem && it->getVolume() <= volRem){
+                carrinha.addEnconmenda(*it);
+                pesoRem -= it->getPeso();
+                volRem -= it->getVolume();
+                it = this->encomendas.erase(it);
             }
-            it++;
+            else
+                it++;
         }
+        numCarrinhas++;
     }
-    int res1 =0;
-    for (auto &carrinha :carrinhas1){
-        if (!carrinha.getEncomendas().empty()) res1++;
-        else break;
-    }
-//    carrinhas.sort(sortCarrinhasPeso);
-//    encomendas.sort(sortEnconmendasPeso);
-//    list<Carrinha> carrinhas2 = carrinhas;
-//    list<Encomenda> encomendas2 = encomendas;
-//
-//    for (auto &carrinha :carrinhas2){
-//        auto it = encomendas2.begin();
-//        volRem = carrinha.getMaxVol();
-//        pesRem =carrinha.getMaxPeso();
-//        for (auto &encomenda : encomendas2){
-//            if (volRem == 0 || pesRem == 0) break;
-//            if (volRem>=encomenda.getVolume() && pesRem>=encomenda.getPeso()){
-//                volRem -= encomenda.getVolume();
-//                pesRem -= encomenda.getPeso();
-//                carrinha.addEnconmenda(encomenda);
-//                encomendas2.erase(it);
-//            }
-//            it++;
-//        }
-//    }
-//    int res2 =0;
-//    for (auto &carrinha :carrinhas2){
-//        if (!carrinha.getEncomendas().empty()) res2 ++;
-//        else break;
-//    }
-
-//    if (res1 < res2){
-//        for (auto &carrinha :carrinhas1){
-//            if (!carrinha.getEncomendas().empty()) cout << carrinha.getId() << endl;
-//            else  break;
-//        }
-//    } else {
-//        for (auto &carrinha :carrinhas2){
-//            if (!carrinha.getEncomendas().empty()) cout << carrinha.getId() << endl;
-//            else  break;
-//        }
-//    }
-
-    for (auto &carrinha : carrinhas1){
-        if (!carrinha.getEncomendas().empty()) cout << carrinha.getId() << endl;
+    cout << "Foram necessárias " << numCarrinhas << " Carrinhas" << endl;
+    cout << "id's das carrinhas: " << endl;
+    for (auto carrinha : carrinhas){
+        if (!carrinha.getEncomendas().empty()){
+            volRem = carrinha.getMaxVol();
+            pesoRem = carrinha.getMaxPeso();
+            for(auto encomenda : carrinha.getEncomendas()){
+                volRem -= encomenda.getVolume();
+                pesoRem -= encomenda.getPeso();
+            }
+            cout << carrinha.getId() << " - " << carrinha.getNumEncomendas() << " encomendas - ";
+            cout << "eficiencia de peso: " <<  (double) (carrinha.getMaxPeso()-pesoRem)/carrinha.getMaxPeso() * 100 << "%" << " - eficiencia de volume: " <<  (double) (carrinha.getMaxVol()-volRem)/carrinha.getMaxVol() * 100 << "%" << endl << endl;
+        }
         else  break;
     }
-
-
+    cout << endl;
 }
 
 bool c2CarrinhaSort(const Carrinha &carrinha1, const Carrinha &carrinha2){
     if(carrinha1.getCusto() == carrinha2.getCusto())
-        return carrinha1.getMaxPeso() < carrinha2.getMaxPeso();
+        return carrinha1.getMaxPeso() + carrinha1.getMaxVol() > carrinha2.getMaxPeso() + carrinha2.getMaxVol();
     return carrinha1.getCusto() < carrinha2.getCusto();
 }
 
 bool c2EncomendasSort(const Encomenda &encomenda1, const Encomenda &encomenda2){
     if(encomenda1.getRecompensa() == encomenda2.getRecompensa())
-        return encomenda1.getPeso() < encomenda2.getPeso();
+        return encomenda1.getPeso() + encomenda1.getVolume() < encomenda2.getPeso() + encomenda1.getVolume();
     return encomenda1.getRecompensa() > encomenda2.getRecompensa();
 }
 
+int lucro(const list<Carrinha>& carrinhas){
+    int lucro = 0;
+    for(auto carrinha : carrinhas){
+        if(carrinha.getEncomendas().empty())
+            break;
+        lucro -= carrinha.getCusto();
+        for(auto encomenda : carrinha.getEncomendas())
+            lucro += encomenda.getRecompensa();
+    }
+
+    return lucro;
+}
+
+int lucroPorCarrinha(Carrinha carrinha){
+    int lucro = 0;
+    lucro -= carrinha.getCusto();
+    for(auto encomenda : carrinha.getEncomendas())
+        lucro += encomenda.getRecompensa();
+
+    return lucro;
+}
+
 void Armazem::cenario2() {
-    /* ideias:
-     * "greedy": ordenar encomendas por recompensa(descendente) e estafetas por custo(ascendente) e inserir até alcançar o lucro maximo.
-     * outras possibilidades por definir.
-     */
     carrinhas.sort(c2CarrinhaSort);
     encomendas.sort(c2EncomendasSort);
 
-    list<Carrinha> estafetas;
-    list<Encomenda> entregas;
-
     int maxLucro = INT_MIN;
 
-    while(!carrinhas.empty()){
-        estafetas.push_back(carrinhas.front());
-        carrinhas.pop_front();
-         auto it = encomendas.begin();
-        unsigned int currPeso = 0, currVol = 0;
-
+    for(auto &carrinha : carrinhas){
+        unsigned int volRem = carrinha.getMaxVol(), pesoRem = carrinha.getMaxPeso();
+        auto it = encomendas.begin();
         while(!encomendas.empty() && it != encomendas.end()){
-           if(currPeso + it->getPeso() <= estafetas.back().getMaxPeso() && currVol + it->getVolume() <= estafetas.back().getMaxVol()){
-                currPeso += it->getPeso();
-                currVol += it->getVolume();
-                entregas.push_back(*it);
+           if(it->getPeso() <= pesoRem && it->getVolume() <= volRem){
+                pesoRem -= it->getPeso();
+                volRem -= it->getVolume();
+                carrinha.addEnconmenda(*it);
                 it = encomendas.erase(it);
              }
            else
                it++;
         }
-        int currLucro = lucro(estafetas, entregas);
+        int currLucro = lucro(carrinhas);
         if(currLucro >= maxLucro)
             maxLucro = currLucro;
         else{
-            estafetas.pop_back();
+            carrinha.clearEncomendas();
             break;
         }
     }
-    for(auto estafeta : estafetas)
-        cout << estafeta.getId() << endl;
+    cout << "lucro máximo: " << maxLucro << "€" << endl;
+    cout << "id's das carrinhas:" << endl;
+    for(auto carrinha : carrinhas){
+        if(!carrinha.getEncomendas().empty()){
+            cout << "Carrinha " << carrinha.getId() <<  " - " << lucroPorCarrinha(carrinha)<< "€" << endl;
+            continue;
+        }
+        cout << endl << endl;
+        break;
+    }
 }
-
-int Armazem::lucro(const list<Carrinha>& custos, const list<Encomenda>& lucros){
-    int positives = 0, negatives = 0;
-    for(auto custo : custos)
-        negatives += custo.getCusto();
-
-    for(auto lucro : lucros)
-        positives+= lucro.getRecompensa();
-
-    return positives-negatives;
-}
-
 
 bool c3Sort(const Encomenda &encomenda1, const Encomenda &encomenda2){
     return encomenda1.getDuration() < encomenda2.getDuration();

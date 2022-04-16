@@ -41,6 +41,7 @@ int Carrinha::getNumEncomendas() {
     return enconmendas.size();
 }
 
+
 list<Encomenda> Carrinha::getEncomendas() {
     return enconmendas;
 }
@@ -51,6 +52,10 @@ unsigned int Carrinha::getId() const {
 
 void Carrinha::setId(unsigned int id) {
     Carrinha::id = id;
+}
+
+void Carrinha::clearEncomendas() {
+    enconmendas.clear();
 }
 
 
