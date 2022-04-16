@@ -19,7 +19,7 @@ private:
     FileReader fileReader;
 
 public:
-    Menu(Armazem armazem);
+    explicit Menu(Armazem armazem);
 
     void run();
 

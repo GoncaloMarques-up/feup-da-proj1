@@ -49,8 +49,8 @@ void Menu::drawCenarios() {
 void Menu::cenarios() {
     int input;
     do{
-        armazem.setEncomendas(fileReader.GuardaEncomendas());
-        armazem.setCarrinhas(fileReader.GuardaCarrinhas());
+        armazem.setEncomendas(FileReader::GuardaEncomendas());
+        armazem.setCarrinhas(FileReader::GuardaCarrinhas());
         drawCenarios();
         cin >> input;
         switch (input) {

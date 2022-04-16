@@ -12,24 +12,12 @@ unsigned int Carrinha::getMaxVol() const {
     return maxVol;
 }
 
-void Carrinha::setMaxVol(unsigned int maxVol) {
-    Carrinha::maxVol = maxVol;
-}
-
 unsigned int Carrinha::getMaxPeso() const {
     return maxPeso;
 }
 
-void Carrinha::setMaxPeso(unsigned int maxPeso) {
-    Carrinha::maxPeso = maxPeso;
-}
-
 unsigned int Carrinha::getCusto() const {
     return custo;
-}
-
-void Carrinha::setCusto(unsigned int custo) {
-    Carrinha::custo = custo;
 }
 
 
@@ -48,10 +36,6 @@ list<Encomenda> Carrinha::getEncomendas() {
 
 unsigned int Carrinha::getId() const {
     return id;
-}
-
-void Carrinha::setId(unsigned int id) {
-    Carrinha::id = id;
 }
 
 void Carrinha::clearEncomendas() {
