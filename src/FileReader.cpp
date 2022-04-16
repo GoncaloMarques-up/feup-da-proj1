@@ -53,7 +53,7 @@ list<Encomenda> FileReader::GuardaEncomendas() {
         istringstream(token) >> recompensa;
         getline(iss, token, '\n');
         istringstream(token) >> duration;
-        encomendas.emplace_back(id, duration, recompensa, vol, peso);
+        encomendas.emplace_back(duration, recompensa, vol, peso);
         id++;
     }
     loadEncomendas.close();
