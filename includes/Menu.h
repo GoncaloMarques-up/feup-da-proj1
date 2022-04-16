@@ -23,17 +23,17 @@ public:
 
     void run();
 
-    void drawMainMenu();
+    static void drawMainMenu();
     void mainMenu();
 
-    void drawCenarios();
+    static void drawCenarios();
     void cenarios();
 
-    void drawDevTeam();
-    void devTeam();
+    static void drawDevTeam();
+    static void devTeam();
 
-    void drawExit();
-    int exit();
+    static void drawExit();
+    static int exit();
 
 };
 
