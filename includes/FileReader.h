@@ -16,7 +16,9 @@
 class FileReader {
 public:
     FileReader();
+    ///loads the trucks from the file carrinhas.txt into a list and returns it
     static list<Carrinha> GuardaCarrinhas();
+    ///loads the packages from the file encomendas.txt into a list and returns it
     static list<Encomenda> GuardaEncomendas();
 
 };
