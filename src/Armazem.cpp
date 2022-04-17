@@ -170,9 +170,12 @@ void Armazem::cenario3(int dia) {
 
     int tam = time.size();
 
-    for(auto it1 = time.begin(); it1!=time.end(); it1++)
+    for(auto it1 = time.begin(); it1!=time.end(); it1++){
+        tempoAcumulado += *time.begin();
         for(auto it2 = it1; it2!=time.begin(); it2--)
             tempoAcumulado += *it2;
+    }
+
 
     cout << "Dia "<< dia << endl;
     cout << "Numero de Encomendas Entregues: " << tam << endl;
