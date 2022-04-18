@@ -16,8 +16,8 @@
 class FileReader {
 public:
     FileReader();
-    static list<Carrinha> GuardaCarrinhas();
-    static list<Encomenda> GuardaEncomendas();
+    static list<Carrinha> GuardaCarrinhas(const string& file);
+    static list<Encomenda> GuardaEncomendas(const string& file);
 
 };
 

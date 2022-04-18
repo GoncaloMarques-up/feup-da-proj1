@@ -7,8 +7,8 @@
 
 FileReader::FileReader() = default;
 
-list<Carrinha> FileReader::GuardaCarrinhas() {
-    ifstream loadEstafetas("../data/carrinhas.txt");
+list<Carrinha> FileReader::GuardaCarrinhas(const string& file) {
+    ifstream loadEstafetas("../data/" + file);
     if(!loadEstafetas.is_open())
         exit(EXIT_FAILURE);
     string data;
@@ -32,8 +32,8 @@ list<Carrinha> FileReader::GuardaCarrinhas() {
     return carrinhas;
 }
 
-list<Encomenda> FileReader::GuardaEncomendas() {
-    ifstream loadEncomendas("../data/encomendas.txt");
+list<Encomenda> FileReader::GuardaEncomendas(const string& file) {
+    ifstream loadEncomendas("../data/" + file);
     if(!loadEncomendas.is_open())
         exit(EXIT_FAILURE);
     string data;

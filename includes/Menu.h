@@ -16,7 +16,7 @@ using namespace std;
 class Menu {
 private:
     Armazem armazem;
-    FileReader fileReader;
+    bool teste = false;
 
 public:
     explicit Menu(Armazem armazem);
@@ -31,6 +31,9 @@ public:
 
     static void drawDevTeam();
     static void devTeam();
+
+    static void drawFileChooser();
+    void chooseFile();
 
     static void drawExit();
     static int exit();
