@@ -48,6 +48,8 @@ void Armazem::cenario1(){
     unsigned int volRem;
     unsigned int pesoRem;
     unsigned int numCarrinhas = 0;
+    unsigned int totalEncomendas = encomendas.size();
+    unsigned int encomendasEntregues = 0;
     carrinhas.sort(c1SortCarrinhas);
     encomendas.sort(c1SortEncomendas);
     for(auto &carrinha : carrinhas){
@@ -65,12 +67,14 @@ void Armazem::cenario1(){
                 pesoRem -= it->getPeso();
                 volRem -= it->getVolume();
                 it = this->encomendas.erase(it);
+                encomendasEntregues++;
             }
             else
                 it++;
         }
         numCarrinhas++;
     }
+    cout << "Foram entregues " << (double) encomendasEntregues/totalEncomendas*100 << "% das encomendas do dia" << endl;
     cout << "Foram necessárias " << numCarrinhas << " Carrinhas" << endl;
     cout << "id's das carrinhas: " << endl;
     for (auto carrinha : carrinhas){
@@ -151,7 +155,8 @@ int lucroPorCarrinha(Carrinha carrinha){
 void Armazem::cenario2() {
     carrinhas.sort(c2CarrinhaSort);
     encomendas.sort(c2EncomendasSort);
-
+    unsigned int totalEncomendas = encomendas.size();
+    unsigned int encomendasEntregues = 0;
     int maxLucro = INT_MIN;
 
     for(auto &carrinha : carrinhas){
@@ -163,6 +168,7 @@ void Armazem::cenario2() {
                 volRem -= it->getVolume();
                 carrinha.addEnconmenda(*it);
                 it = encomendas.erase(it);
+                encomendasEntregues++;
              }
            else
                it++;
@@ -175,6 +181,7 @@ void Armazem::cenario2() {
             break;
         }
     }
+    cout << "Foram entregues " << (double) encomendasEntregues/totalEncomendas*100 << "% das encomendas do dia" << endl;
     cout << "lucro máximo: " << maxLucro << "€" << endl;
     cout << "id's das carrinhas:" << endl;
     for(auto carrinha : carrinhas){
