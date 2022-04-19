@@ -5,6 +5,7 @@ To compile and run on linux either use clion or run commands:
 ```
 cmake .
 make
+./projeto_DA
 ```
 
 On windows use wsl and run the same commands.
