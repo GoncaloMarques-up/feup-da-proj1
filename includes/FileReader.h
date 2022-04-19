@@ -16,6 +16,7 @@
 class FileReader {
 public:
     FileReader();
+
     /**
      * loads the trucks from the file carrinhas.txt into a list
      * @return a list of the object Carrinha with the trucks from the file carrinhas.txt

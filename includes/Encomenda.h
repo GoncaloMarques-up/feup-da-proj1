@@ -15,6 +15,7 @@ private:
 public:
     Encomenda(unsigned int duration, unsigned int recompensa, unsigned int volume, unsigned int peso);
 
+
     /**
      *
      * @return duration of Encomenda
