@@ -1,4 +1,9 @@
 <map id="lucro" name="lucro">
-<area shape="rect" id="node1" title="returns the sum of the custo if all the trucks in the list" alt="" coords="172,29,223,56"/>
-<area shape="rect" id="node2" href="$_armazem_8cpp.html#ab26d7992b834b4b48da8dc6b86e2e3a0" title="returns the sum of the recompensa of all the packages in the truck" alt="" coords="5,29,124,56"/>
+<area shape="rect" id="node1" title=" " alt="" coords="911,29,961,56"/>
+<area shape="rect" id="node2" href="$class_armazem.html#a773563864276dc5eeb8b70a25ec7c123" title=" " alt="" coords="561,29,696,56"/>
+<area shape="rect" id="node7" href="$_armazem_8cpp.html#ab26d7992b834b4b48da8dc6b86e2e3a0" title=" " alt="" coords="744,55,863,81"/>
+<area shape="rect" id="node3" href="$class_menu.html#a17ce9ecf843bc1f3d84c17b81797095a" title=" " alt="" coords="403,29,513,56"/>
+<area shape="rect" id="node4" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title=" " alt="" coords="232,29,355,56"/>
+<area shape="rect" id="node5" href="$class_menu.html#a35656cd130e24d69383a5c9d0a73a38c" title=" " alt="" coords="104,29,184,56"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,29,56,56"/>
 </map>
