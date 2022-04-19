@@ -16,7 +16,7 @@ using namespace std;
 class Menu {
 private:
     Armazem armazem;
-    FileReader fileReader;
+    bool teste = false;
 
 public:
     explicit Menu(Armazem armazem);
@@ -53,6 +53,7 @@ public:
      * the computation for the dev team
      */
     static void devTeam();
+
 
     /**
      * draws the exit

@@ -16,6 +16,7 @@ void Menu::drawMainMenu() {
     cout << "-------------- Design de Algoritmos - 2021/22 --------------" << endl;
     cout << "1 - Cenarios" << endl;
     cout << "2 - DevTeam" << endl;
+    cout << "3 - Escolha de ficheiros" << endl;
     cout << "0 - Sair" << endl << endl;
 }
 
@@ -31,11 +32,14 @@ void Menu::mainMenu() {
             case 2:
                 devTeam();
                 break;
+            case 3:
+                chooseFile();
+                break;
             case 0:
                 input = exit();
                 break;
         }
-    } while (input!=0);
+    } while (input);
 }
 
 void Menu::drawCenarios() {
@@ -49,8 +53,15 @@ void Menu::drawCenarios() {
 void Menu::cenarios() {
     int input;
     do{
-        armazem.setEncomendas(FileReader::GuardaEncomendas());
-        armazem.setCarrinhas(FileReader::GuardaCarrinhas());
+        if(!teste){
+            armazem.setEncomendas(FileReader::GuardaEncomendas("encomendas.txt"));
+            armazem.setCarrinhas(FileReader::GuardaCarrinhas("carrinhas.txt"));
+        }
+        else {
+            armazem.setEncomendas(FileReader::GuardaEncomendas("encomendas_teste.txt"));
+            armazem.setCarrinhas(FileReader::GuardaCarrinhas("carrinhas_teste.txt"));
+        }
+
         drawCenarios();
         cin >> input;
         switch (input) {
@@ -75,7 +86,7 @@ void Menu::cenarios() {
                 }
                 break;
         }
-    } while (input!=0);
+    } while (input);
 }
 
 void Menu::drawDevTeam() {
@@ -98,9 +109,35 @@ void Menu::drawExit() {
     cout << "0 - Nao" << endl;
 }
 
+
 int Menu::exit() {
     drawExit();
     int input;
     cin >> input;
     return !input;
+}
+
+void Menu::drawFileChooser() {
+    cout << "----------------- Escolha de Ficheiros -----------------" << endl;
+    cout << "1 - Dataset de Teste (mais pequeno)" << endl;
+    cout << "2 - Dataset Principal (maior)" << endl;
+    cout << "0 - Sair" << endl << endl;
+}
+
+void Menu::chooseFile() {
+    int input;
+    do{
+        drawFileChooser();
+        cin >> input;
+        switch (input) {
+            case 1:
+                teste = true;
+                break;
+            case 2:
+                teste = false;
+                break;
+            case 0:
+                input = 0;
+    }
+    }while(input);
 }

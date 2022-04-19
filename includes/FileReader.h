@@ -28,6 +28,7 @@ public:
      */
     static list<Encomenda> GuardaEncomendas();
 
+
 };
 
 
