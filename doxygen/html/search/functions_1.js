@@ -10,5 +10,6 @@ var searchData=
   ['cenario2_7',['cenario2',['../class_armazem.html#a773563864276dc5eeb8b70a25ec7c123',1,'Armazem']]],
   ['cenario3_8',['cenario3',['../class_armazem.html#a6f51663ddfab0925e9cdb2b01220946d',1,'Armazem']]],
   ['cenarios_9',['cenarios',['../class_menu.html#a17ce9ecf843bc1f3d84c17b81797095a',1,'Menu']]],
-  ['clearencomendas_10',['clearEncomendas',['../class_carrinha.html#ac2e5c2eab84f61bd949a5012afebe815',1,'Carrinha']]]
+  ['choosefile_10',['chooseFile',['../class_menu.html#afd76e693a6ed34a3b2293ef2b6c5e6b1',1,'Menu']]],
+  ['clearencomendas_11',['clearEncomendas',['../class_carrinha.html#ac2e5c2eab84f61bd949a5012afebe815',1,'Carrinha']]]
 ];

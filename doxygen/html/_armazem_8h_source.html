@@ -95,38 +95,41 @@ $(document).ready(function(){initNavTree('_armazem_8h_source.html',''); initResi
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;climits&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_encomenda_8h.html">Encomenda.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_carrinha_8h.html">Carrinha.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_armazem.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_armazem.html">Armazem</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    list&lt;Encomenda&gt; encomendas;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    list&lt;Carrinha&gt; carrinhas;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_armazem.html#a404bbd20e5fe0b1fe159f919c00681b2">Armazem</a>();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    list&lt;Encomenda&gt; <a class="code hl_function" href="class_armazem.html#a1f7c885df33a54a014258f000a14129f">getEncomendas</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#a0541aa6ff778ea2b48098e46c7387148">setEncomendas</a>(<span class="keyword">const</span> list&lt;Encomenda&gt; &amp;entregas);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#a2fd469a0c6bf0f1cafc37104738ec403">setCarrinhas</a>(<span class="keyword">const</span> list&lt;Carrinha&gt; &amp;estafetas);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#ae58da83a1eafddfc4ddd568eb7a89290">cenario1</a>();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#a773563864276dc5eeb8b70a25ec7c123">cenario2</a>();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#a6f51663ddfab0925e9cdb2b01220946d">cenario3</a>(<span class="keywordtype">int</span> dia);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif </span><span class="comment">//PROJETO_DA_ARMAZEM_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_encomenda_8h.html">Encomenda.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_carrinha_8h.html">Carrinha.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_armazem.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_armazem.html">Armazem</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    list&lt;Encomenda&gt; encomendas;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    list&lt;Carrinha&gt; carrinhas;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="class_armazem.html#a404bbd20e5fe0b1fe159f919c00681b2">Armazem</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    list&lt;Encomenda&gt; <a class="code hl_function" href="class_armazem.html#a1f7c885df33a54a014258f000a14129f">getEncomendas</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#a0541aa6ff778ea2b48098e46c7387148">setEncomendas</a>(<span class="keyword">const</span> list&lt;Encomenda&gt; &amp;entregas);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#a2fd469a0c6bf0f1cafc37104738ec403">setCarrinhas</a>(<span class="keyword">const</span> list&lt;Carrinha&gt; &amp;estafetas);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#ae58da83a1eafddfc4ddd568eb7a89290">cenario1</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#a773563864276dc5eeb8b70a25ec7c123">cenario2</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_armazem.html#a6f51663ddfab0925e9cdb2b01220946d">cenario3</a>(<span class="keywordtype">int</span> dia);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">//PROJETO_DA_ARMAZEM_H</span></div>
 <div class="ttc" id="a_carrinha_8h_html"><div class="ttname"><a href="_carrinha_8h.html">Carrinha.h</a></div></div>
 <div class="ttc" id="a_encomenda_8h_html"><div class="ttname"><a href="_encomenda_8h.html">Encomenda.h</a></div></div>
-<div class="ttc" id="aclass_armazem_html"><div class="ttname"><a href="class_armazem.html">Armazem</a></div><div class="ttdef"><b>Definition:</b> Armazem.h:16</div></div>
+<div class="ttc" id="aclass_armazem_html"><div class="ttname"><a href="class_armazem.html">Armazem</a></div><div class="ttdef"><b>Definition:</b> Armazem.h:17</div></div>
 <div class="ttc" id="aclass_armazem_html_a0541aa6ff778ea2b48098e46c7387148"><div class="ttname"><a href="class_armazem.html#a0541aa6ff778ea2b48098e46c7387148">Armazem::setEncomendas</a></div><div class="ttdeci">void setEncomendas(const list&lt; Encomenda &gt; &amp;entregas)</div><div class="ttdef"><b>Definition:</b> Armazem.cpp:17</div></div>
 <div class="ttc" id="aclass_armazem_html_a1f7c885df33a54a014258f000a14129f"><div class="ttname"><a href="class_armazem.html#a1f7c885df33a54a014258f000a14129f">Armazem::getEncomendas</a></div><div class="ttdeci">list&lt; Encomenda &gt; getEncomendas() const</div><div class="ttdef"><b>Definition:</b> Armazem.cpp:13</div></div>
 <div class="ttc" id="aclass_armazem_html_a2fd469a0c6bf0f1cafc37104738ec403"><div class="ttname"><a href="class_armazem.html#a2fd469a0c6bf0f1cafc37104738ec403">Armazem::setCarrinhas</a></div><div class="ttdeci">void setCarrinhas(const list&lt; Carrinha &gt; &amp;estafetas)</div><div class="ttdef"><b>Definition:</b> Armazem.cpp:21</div></div>
 <div class="ttc" id="aclass_armazem_html_a404bbd20e5fe0b1fe159f919c00681b2"><div class="ttname"><a href="class_armazem.html#a404bbd20e5fe0b1fe159f919c00681b2">Armazem::Armazem</a></div><div class="ttdeci">Armazem()</div><div class="ttdef"><b>Definition:</b> Armazem.cpp:8</div></div>
-<div class="ttc" id="aclass_armazem_html_a6f51663ddfab0925e9cdb2b01220946d"><div class="ttname"><a href="class_armazem.html#a6f51663ddfab0925e9cdb2b01220946d">Armazem::cenario3</a></div><div class="ttdeci">void cenario3(int dia)</div><div class="ttdef"><b>Definition:</b> Armazem.cpp:200</div></div>
-<div class="ttc" id="aclass_armazem_html_a773563864276dc5eeb8b70a25ec7c123"><div class="ttname"><a href="class_armazem.html#a773563864276dc5eeb8b70a25ec7c123">Armazem::cenario2</a></div><div class="ttdeci">void cenario2()</div><div class="ttdef"><b>Definition:</b> Armazem.cpp:151</div></div>
+<div class="ttc" id="aclass_armazem_html_a6f51663ddfab0925e9cdb2b01220946d"><div class="ttname"><a href="class_armazem.html#a6f51663ddfab0925e9cdb2b01220946d">Armazem::cenario3</a></div><div class="ttdeci">void cenario3(int dia)</div><div class="ttdef"><b>Definition:</b> Armazem.cpp:207</div></div>
+<div class="ttc" id="aclass_armazem_html_a773563864276dc5eeb8b70a25ec7c123"><div class="ttname"><a href="class_armazem.html#a773563864276dc5eeb8b70a25ec7c123">Armazem::cenario2</a></div><div class="ttdeci">void cenario2()</div><div class="ttdef"><b>Definition:</b> Armazem.cpp:155</div></div>
 <div class="ttc" id="aclass_armazem_html_ae58da83a1eafddfc4ddd568eb7a89290"><div class="ttname"><a href="class_armazem.html#ae58da83a1eafddfc4ddd568eb7a89290">Armazem::cenario1</a></div><div class="ttdeci">void cenario1()</div><div class="ttdef"><b>Definition:</b> Armazem.cpp:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

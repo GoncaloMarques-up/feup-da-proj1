@@ -13,9 +13,10 @@ var searchData=
   ['cenario2_10',['cenario2',['../class_armazem.html#a773563864276dc5eeb8b70a25ec7c123',1,'Armazem']]],
   ['cenario3_11',['cenario3',['../class_armazem.html#a6f51663ddfab0925e9cdb2b01220946d',1,'Armazem']]],
   ['cenarios_12',['cenarios',['../class_menu.html#a17ce9ecf843bc1f3d84c17b81797095a',1,'Menu']]],
-  ['clearencomendas_13',['clearEncomendas',['../class_carrinha.html#ac2e5c2eab84f61bd949a5012afebe815',1,'Carrinha']]],
-  ['cmakeccompilerid_2ec_14',['CMakeCCompilerId.c',['../_c_make_c_compiler_id_8c.html',1,'']]],
-  ['cmakecxxcompilerid_2ecpp_15',['CMakeCXXCompilerId.cpp',['../_c_make_c_x_x_compiler_id_8cpp.html',1,'']]],
-  ['compiler_5fid_16',['COMPILER_ID',['../_c_make_c_compiler_id_8c.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCXXCompilerId.cpp']]],
-  ['cxx_5fstd_17',['CXX_STD',['../_c_make_c_x_x_compiler_id_8cpp.html#a34cc889e576a1ae6c84ae9e0a851ba21',1,'CMakeCXXCompilerId.cpp']]]
+  ['choosefile_13',['chooseFile',['../class_menu.html#afd76e693a6ed34a3b2293ef2b6c5e6b1',1,'Menu']]],
+  ['clearencomendas_14',['clearEncomendas',['../class_carrinha.html#ac2e5c2eab84f61bd949a5012afebe815',1,'Carrinha']]],
+  ['cmakeccompilerid_2ec_15',['CMakeCCompilerId.c',['../_c_make_c_compiler_id_8c.html',1,'']]],
+  ['cmakecxxcompilerid_2ecpp_16',['CMakeCXXCompilerId.cpp',['../_c_make_c_x_x_compiler_id_8cpp.html',1,'']]],
+  ['compiler_5fid_17',['COMPILER_ID',['../_c_make_c_compiler_id_8c.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCXXCompilerId.cpp']]],
+  ['cxx_5fstd_18',['CXX_STD',['../_c_make_c_x_x_compiler_id_8cpp.html#a34cc889e576a1ae6c84ae9e0a851ba21',1,'CMakeCXXCompilerId.cpp']]]
 ];

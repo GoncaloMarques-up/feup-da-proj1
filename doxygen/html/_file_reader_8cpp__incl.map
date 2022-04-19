@@ -1,12 +1,13 @@
 <map id="src/FileReader.cpp" name="src/FileReader.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="302,5,433,32"/>
-<area shape="rect" id="node2" href="$_file_reader_8h.html" title=" " alt="" coords="288,80,447,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="185,304,257,331"/>
-<area shape="rect" id="node4" title=" " alt="" coords="456,155,521,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="546,155,615,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,304,44,331"/>
-<area shape="rect" id="node7" href="$_armazem_8h.html" title=" " alt="" coords="124,155,213,181"/>
-<area shape="rect" id="node9" href="$_encomenda_8h.html" title=" " alt="" coords="281,304,384,331"/>
-<area shape="rect" id="node10" href="$_carrinha_8h.html" title=" " alt="" coords="197,229,279,256"/>
-<area shape="rect" id="node8" title=" " alt="" coords="113,229,173,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="419,5,549,32"/>
+<area shape="rect" id="node2" href="$_file_reader_8h.html" title=" " alt="" coords="405,80,563,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,304,77,331"/>
+<area shape="rect" id="node4" title=" " alt="" coords="573,155,638,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="663,155,732,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="414,304,453,331"/>
+<area shape="rect" id="node7" href="$_armazem_8h.html" title=" " alt="" coords="229,155,318,181"/>
+<area shape="rect" id="node10" href="$_encomenda_8h.html" title=" " alt="" coords="147,304,250,331"/>
+<area shape="rect" id="node11" href="$_carrinha_8h.html" title=" " alt="" coords="79,229,161,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="335,229,395,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="236,229,311,256"/>
 </map>
