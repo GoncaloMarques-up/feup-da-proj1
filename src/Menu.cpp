@@ -126,18 +126,16 @@ void Menu::drawFileChooser() {
 
 void Menu::chooseFile() {
     int input;
-    do{
-        drawFileChooser();
-        cin >> input;
-        switch (input) {
-            case 1:
-                teste = true;
-                break;
-            case 2:
-                teste = false;
-                break;
-            case 0:
-                input = 0;
+    drawFileChooser();
+    cin >> input;
+    switch (input) {
+        case 1:
+            teste = true;
+            break;
+        case 2:
+            teste = false;
+            break;
+        case 0:
+            input = 0;
     }
-    }while(input);
 }

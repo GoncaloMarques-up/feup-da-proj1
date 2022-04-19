@@ -54,6 +54,14 @@ public:
      */
     static void devTeam();
 
+    /**
+     * draws file options
+     */
+    static void drawFileChooser();
+    /**
+     * the computation for the file chooser
+     */
+    void chooseFile();
 
     /**
      * draws the exit
