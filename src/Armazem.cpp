@@ -22,12 +22,24 @@ void Armazem::setCarrinhas(const list<Carrinha> &estafetas) {
     Armazem::carrinhas = estafetas;
 }
 
-///bool function to auxiliate the sort of list<Carrinha> returns true if MaxVol+MaxPeso of carrinha1 is bigger than MaxVol+MaxPeso of carrinha2
+
+/**
+ * bool function to auxiliate the sort of list<Carrinha>
+ * @param carrinha1
+ * @param carrinha2
+ * @return true if MaxVol+MaxPeso of carrinha1 is bigger than MaxVol+MaxPeso of carrinha2 and false otherwise
+ */
 bool c1SortCarrinhas(const Carrinha &carrinha1, const Carrinha &carrinha2) {
     return carrinha1.getMaxVol() + carrinha1.getMaxPeso() > carrinha2.getMaxVol() + carrinha2.getMaxPeso();
 }
 
-///bool function to auxiliate the sort of list<Encomenda> returns true if Volume+Peso of encomenda1 is bigger than Volume+Peso of encomenda2
+/// returns
+/**
+ * bool function to auxiliate the sort of list<Encomenda>
+ * @param encomenda1
+ * @param encomenda2
+ * @return true if Volume+Peso of encomenda1 is bigger than Volume+Peso of encomenda2 and false otherwise
+ */
 bool c1SortEncomendas(const Encomenda &encomenda1, const Encomenda &encomenda2) {
     return encomenda1.getVolume() + encomenda1.getPeso() < encomenda2.getVolume() + encomenda2.getPeso();
 }
@@ -77,21 +89,36 @@ void Armazem::cenario1(){
     cout << endl;
 }
 
-///bool function to auxilate the sort of list<Carrinha> that returns true if carrinha2 custo is bigger than carrinha1 custo and returns false if carrinha1 custo is bigger than carrinha2 custo, if the two values are equal it compares the maxPeso+maxVol of the two objects and returns trues if the value of carrinha1 is bigger than the values of carrinha2 else it returns false
+/**
+ * bool function to auxilate the sort of list<Carrinha>
+ * @param carrinha1
+ * @param carrinha2
+ * @return true if carrinha2 custo is bigger than carrinha1 custo and returns false if carrinha1 custo is bigger than carrinha2 custo, if the two values are equal it compares the maxPeso+maxVol of the two objects and returns trues if the value of carrinha1 is bigger than the values of carrinha2 else it returns false
+ */
 bool c2CarrinhaSort(const Carrinha &carrinha1, const Carrinha &carrinha2){
     if(carrinha1.getCusto() == carrinha2.getCusto())
         return carrinha1.getMaxPeso() + carrinha1.getMaxVol() > carrinha2.getMaxPeso() + carrinha2.getMaxVol();
     return carrinha1.getCusto() < carrinha2.getCusto();
 }
 
-///bool function to auxilate the sort of list<Encomenda> that returns true if encomenda1 recompensa is bigger than encomenda2 recompena and returns false if encomenda2 recompena is bigger than encomenda1 recompensa, if the two values are equal it compares the Peso+Volume of the two objects and returns trues if the value of encomenda1 is smaller than the values of encomenda2 else it returns false
+/**
+ * bool function to auxilate the sort of list<Encomenda>
+ * @param encomenda1
+ * @param encomenda2
+ * @return true if encomenda1 recompensa is bigger than encomenda2 recompena and returns false if encomenda2 recompena is bigger than encomenda1 recompensa, if the two values are equal it compares the Peso+Volume of the two objects and returns trues if the value of encomenda1 is smaller than the values of encomenda2 else it returns false
+ */
 bool c2EncomendasSort(const Encomenda &encomenda1, const Encomenda &encomenda2){
     if(encomenda1.getRecompensa() == encomenda2.getRecompensa())
         return encomenda1.getPeso() + encomenda1.getVolume() < encomenda2.getPeso() + encomenda1.getVolume();
     return encomenda1.getRecompensa() > encomenda2.getRecompensa();
 }
 
-///returns the sum of the custo if all the trucks in the list
+
+/**
+ * computes the sum of the custo if all the trucks in the list
+ * @param carrinhas
+ * @return integer lucro
+ */
 int lucro(const list<Carrinha>& carrinhas){
     int lucro = 0;
     for(auto carrinha : carrinhas){
@@ -105,7 +132,12 @@ int lucro(const list<Carrinha>& carrinhas){
     return lucro;
 }
 
-///returns the sum of the recompensa of all the packages in the truck
+
+/**
+ * computes the sum of the recompensa of all the packages in the truck
+ * @param carrinha
+ * @return integer lucro
+ */
 int lucroPorCarrinha(Carrinha carrinha){
     int lucro = 0;
     lucro -= carrinha.getCusto();
@@ -155,7 +187,12 @@ void Armazem::cenario2() {
     }
 }
 
-///bool function to auxilate the sort of list<Encomenda> that returns true if duration of encomenda1 is smller than durationj of encomenda2 and flase otherwise
+/**
+ * bool function to auxilate the sort of list<Encomenda>
+ * @param encomenda1
+ * @param encomenda2
+ * @return true if duration of encomenda1 is smller than durationj of encomenda2 and flase otherwise
+ */
 bool c3Sort(const Encomenda &encomenda1, const Encomenda &encomenda2){
     return encomenda1.getDuration() < encomenda2.getDuration();
 }

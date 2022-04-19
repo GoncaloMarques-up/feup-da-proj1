@@ -15,12 +15,28 @@ private:
 public:
     Encomenda(unsigned int duration, unsigned int recompensa, unsigned int volume, unsigned int peso);
 
+    /**
+     *
+     * @return duration of Encomenda
+     */
     unsigned int getDuration() const;
 
+    /**
+     *
+     * @return recompensa of Encomenda
+     */
     unsigned int getRecompensa() const;
 
+    /**
+     *
+     * @return volume of Encomenda
+     */
     unsigned int getVolume() const;
 
+    /**
+     *
+     * @return peso of Encomenda
+     */
     unsigned int getPeso() const;
 
 };

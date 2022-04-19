@@ -24,12 +24,29 @@ public:
     void setEncomendas(const list<Encomenda> &entregas);
 
     void setCarrinhas(const list<Carrinha> &estafetas);
-
-    ///function that prints the arrangement of trucks and packages where the number of trucks is the minimum possible to deliver all of the packages this function uses a greedy algorithm and has a complexity of (n+nlogn+m+m^2logm) where n is the number of trucks and m is the number of packages
+    /**
+     * prints the arrangement of trucks and packages where the number of trucks is the minimum possible
+     * to deliver all of the packages
+     * this function uses a greedy algorithm and has a complexity of (n+nlogn+m+m^2logm)
+     * where n is the number of trucks and m is the number of packages
+     *
+     */
     void cenario1();
-    ///function that prints the arrangement of trucks and packages where the profit is the maximum this function uses a greedy algorithm and has a complexity of (n+nlogn+m+m^2logm) where n is the number of trucks and m is the number of packages
+    /**
+     * prints the arrangement of trucks and packages where the profit is the maximum
+     * this function uses a greedy algorithm and has a complexity of (n+nlogn+m+m^2logm)
+     * where n is the number of trucks and m is the number of packages
+     */
     void cenario2();
-    ///function that prints the number of express packages delivered int that day, the total number of expresse packages, the percentege of packages delivered all the time that took to deliver the packages and the average time of each delivery this function uses a greedy algorithm and has a complexity of (n+nlogn) where n is the number packages
+    /**
+     * prints the number of express packages delivered int that day,
+     * the total number of expresse packages, the percentege of packages delivered
+     * all the time that took to deliver the packages and the average time of each delivery
+     * this function uses a greedy algorithm and has a complexity of (n+nlogn)
+     * where n is the number packages
+     * @param dia an integer that represents the day that the function is computing
+     */
+
     void cenario3(int dia);
 
 };
