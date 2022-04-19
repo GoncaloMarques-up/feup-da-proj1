@@ -21,21 +21,55 @@ private:
 public:
     explicit Menu(Armazem armazem);
 
+
+    /**
+     * starts the menu
+     */
     void run();
 
+    /**
+     * draws the main menu
+     */
     static void drawMainMenu();
+    /**
+     * the computation for the main menu
+     */
     void mainMenu();
 
+    /**
+     * draws cenarios
+     */
     static void drawCenarios();
+    /**
+     * the computation for cenarios
+     */
     void cenarios();
 
+    /**
+     * draws the dev team
+     */
     static void drawDevTeam();
+    /**
+     * the computation for the dev team
+     */
     static void devTeam();
 
+    /**
+     * draws file options
+     */
     static void drawFileChooser();
+    /**
+     * the computation for the file chooser
+     */
     void chooseFile();
 
+    /**
+     * draws the exit
+     */
     static void drawExit();
+    /**
+     * the computation for the exit
+     */
     static int exit();
 
 };

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <list>
 #include <climits>
+#include <algorithm>
 #include "Encomenda.h"
 #include "Carrinha.h"
 
@@ -25,11 +26,31 @@ public:
 
     void setCarrinhas(const list<Carrinha> &estafetas);
 
-
+    /**
+     * prints the arrangement of trucks and packages where the number of trucks is the minimum possible
+     * to deliver all of the packages
+     * this function uses a greedy algorithm and has a complexity of O(n*m)
+     * where n is the number of trucks and m is the number of packages
+     *
+     */
     void cenario1();
-    void cenario2();
-    void cenario3(int dia);
 
+    /**
+     * prints the arrangement of trucks and packages where the profit is the maximum
+     * this function uses a greedy algorithm and has a complexity of O(n*m)
+     * where n is the number of trucks and m is the number of packages
+     */
+    void cenario2();
+
+    /**
+     * prints the number of express packages delivered in that day,
+     * the total number of expresse packages, the percentege of packages delivered
+     * all the time that took to deliver the packages and the average time of each delivery
+     * this function uses a greedy algorithm and has a complexity of O(n)
+     * where n is the number packages
+     * @param dia an integer that represents the day that the function is computing
+     */
+    void cenario3(int dia);
 };
 
 #endif //PROJETO_DA_ARMAZEM_H

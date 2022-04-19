@@ -1,0 +1,35 @@
+<map id="Menu::mainMenu" name="Menu::mainMenu">
+<area shape="rect" id="node1" title=" " alt="" coords="5,668,128,695"/>
+<area shape="rect" id="node2" href="$class_menu.html#a17ce9ecf843bc1f3d84c17b81797095a" title=" " alt="" coords="195,389,306,416"/>
+<area shape="rect" id="node27" href="$class_menu.html#afd76e693a6ed34a3b2293ef2b6c5e6b1" title=" " alt="" coords="188,617,313,644"/>
+<area shape="rect" id="node29" href="$class_menu.html#ae819a32ac62a189a1930b6a83ee7c20b" title=" " alt="" coords="194,668,307,695"/>
+<area shape="rect" id="node31" href="$class_menu.html#a025bb8d3b75a37e15cf4a0f8794f034b" title=" " alt="" coords="176,719,325,745"/>
+<area shape="rect" id="node32" href="$class_menu.html#a2133e7b9564fda512ed9a120b035ed8a" title=" " alt="" coords="209,769,292,796"/>
+<area shape="rect" id="node3" href="$class_armazem.html#ae58da83a1eafddfc4ddd568eb7a89290" title=" " alt="" coords="411,161,546,188"/>
+<area shape="rect" id="node10" href="$class_armazem.html#a773563864276dc5eeb8b70a25ec7c123" title=" " alt="" coords="411,212,546,239"/>
+<area shape="rect" id="node18" href="$class_armazem.html#a6f51663ddfab0925e9cdb2b01220946d" title=" " alt="" coords="411,263,546,289"/>
+<area shape="rect" id="node21" href="$class_menu.html#a8cf14a464d0ef4fd4398193dd2bee399" title=" " alt="" coords="409,313,549,340"/>
+<area shape="rect" id="node22" href="$class_armazem.html#a1f7c885df33a54a014258f000a14129f" title=" " alt="" coords="389,364,569,391"/>
+<area shape="rect" id="node23" href="$class_file_reader.html#a18f1319f2338c7c64fb3d8b19ca4b2e6" title=" " alt="" coords="384,415,573,441"/>
+<area shape="rect" id="node24" href="$class_file_reader.html#a6f0cc01db18909d9e3007811749a240f" title=" " alt="" coords="373,465,584,492"/>
+<area shape="rect" id="node25" href="$class_armazem.html#a2fd469a0c6bf0f1cafc37104738ec403" title=" " alt="" coords="399,516,558,543"/>
+<area shape="rect" id="node26" href="$class_armazem.html#a0541aa6ff778ea2b48098e46c7387148" title=" " alt="" coords="389,567,569,593"/>
+<area shape="rect" id="node4" href="$_armazem_8cpp.html#a7435a1ef326c0e0e3d784cc821923743" title=" " alt="" coords="643,161,757,188"/>
+<area shape="rect" id="node7" href="$_armazem_8cpp.html#ad092656689d877f8caf01da3e755d5eb" title="returns" alt="" coords="632,56,768,83"/>
+<area shape="rect" id="node5" href="$class_carrinha.html#aac522153af20f87b6013cadbdbd72ffd" title=" " alt="" coords="837,157,988,184"/>
+<area shape="rect" id="node6" href="$class_carrinha.html#a993918b7b41fec48293f7c8b1b2536b9" title=" " alt="" coords="843,208,983,235"/>
+<area shape="rect" id="node8" href="$class_encomenda.html#a1625a3e8b10501da0c374c77e384eafa" title=" " alt="" coords="839,56,986,83"/>
+<area shape="rect" id="node9" href="$class_encomenda.html#acdcab157f87291492ee497e2857d0725" title=" " alt="" coords="832,5,993,32"/>
+<area shape="rect" id="node11" href="$_armazem_8cpp.html#a56e9a62f084c21936e8c002dbbe03223" title=" " alt="" coords="646,212,754,239"/>
+<area shape="rect" id="node13" href="$_armazem_8cpp.html#a79fa7c0ec620cdd450abe3383888ce69" title=" " alt="" coords="632,107,768,133"/>
+<area shape="rect" id="node15" href="$_armazem_8cpp.html#a2e740849015ea3cd5f436167ce6e5b1c" title=" " alt="" coords="887,384,938,411"/>
+<area shape="rect" id="node16" href="$_armazem_8cpp.html#ab26d7992b834b4b48da8dc6b86e2e3a0" title=" " alt="" coords="641,268,759,295"/>
+<area shape="rect" id="node12" href="$class_carrinha.html#abcdf0c28990378606d8ba45c349f801d" title=" " alt="" coords="847,259,978,285"/>
+<area shape="rect" id="node14" href="$class_encomenda.html#ad867370508332fa319002ba2a9fb1717" title=" " alt="" coords="816,107,1009,133"/>
+<area shape="rect" id="node17" href="$class_carrinha.html#affddc3df70888b07fa365d547bfd7d8b" title=" " alt="" coords="827,309,999,336"/>
+<area shape="rect" id="node19" href="$_armazem_8cpp.html#a50f76aedc277cfb4a8658e78e472b167" title=" " alt="" coords="670,425,730,452"/>
+<area shape="rect" id="node20" href="$class_encomenda.html#a32602d2ac4075aff1d9d8290bf7e91a4" title=" " alt="" coords="830,435,995,461"/>
+<area shape="rect" id="node28" href="$class_menu.html#a3dfc88e0c979e92617b919a4b41c8ae0" title=" " alt="" coords="399,617,558,644"/>
+<area shape="rect" id="node30" href="$class_menu.html#a818eb6182bde037a4175d32e1b6e0343" title=" " alt="" coords="407,668,550,695"/>
+<area shape="rect" id="node33" href="$class_menu.html#a22040f9371b06cefed887d8bf19e8d75" title=" " alt="" coords="423,769,535,796"/>
+</map>

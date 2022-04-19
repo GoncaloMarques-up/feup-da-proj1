@@ -1,0 +1,9 @@
+<map id="Armazem::cenario1" name="Armazem::cenario1">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,140,108"/>
+<area shape="rect" id="node2" href="$_armazem_8cpp.html#a7435a1ef326c0e0e3d784cc821923743" title=" " alt="" coords="199,56,313,83"/>
+<area shape="rect" id="node5" href="$_armazem_8cpp.html#ad092656689d877f8caf01da3e755d5eb" title="returns" alt="" coords="188,107,324,133"/>
+<area shape="rect" id="node3" href="$class_carrinha.html#aac522153af20f87b6013cadbdbd72ffd" title=" " alt="" coords="377,5,528,32"/>
+<area shape="rect" id="node4" href="$class_carrinha.html#a993918b7b41fec48293f7c8b1b2536b9" title=" " alt="" coords="383,56,523,83"/>
+<area shape="rect" id="node6" href="$class_encomenda.html#a1625a3e8b10501da0c374c77e384eafa" title=" " alt="" coords="379,107,526,133"/>
+<area shape="rect" id="node7" href="$class_encomenda.html#acdcab157f87291492ee497e2857d0725" title=" " alt="" coords="372,157,533,184"/>
+</map>
