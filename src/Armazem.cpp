@@ -117,28 +117,8 @@ bool c2EncomendasSort(const Encomenda &encomenda1, const Encomenda &encomenda2){
     return encomenda1.getRecompensa() > encomenda2.getRecompensa();
 }
 
-
 /**
- * computes the sum of the custo if all the trucks in the list
- * @param carrinhas
- * @return integer lucro
- */
-int lucro(const list<Carrinha>& carrinhas){
-    int lucro = 0;
-    for(auto carrinha : carrinhas){
-        if(carrinha.getEncomendas().empty())
-            break;
-        lucro -= carrinha.getCusto();
-        for(auto encomenda : carrinha.getEncomendas())
-            lucro += encomenda.getRecompensa();
-    }
-
-    return lucro;
-}
-
-
-/**
- * computes the sum of the recompensa of all the packages in the truck
+ * computes the sum of the recompensa of all the packages in the truck minus the cost of the truck
  * @param carrinha
  * @return integer lucro
  */
@@ -173,7 +153,7 @@ void Armazem::cenario2() {
            else
                it++;
         }
-        int currLucro = lucro(carrinhas);
+        int currLucro = maxLucro + lucroPorCarrinha(carrinha);
         if(currLucro >= maxLucro)
             maxLucro = currLucro;
         else{
@@ -206,7 +186,7 @@ bool c3Sort(const Encomenda &encomenda1, const Encomenda &encomenda2){
 
 void Armazem::cenario3(int dia) {
     list<int> time;
-    int total = 0, current, workHours = 28800, tempoAcumulado = 0, nTotal = encomendas.size();
+    int total = 0, current, workHours = 28800, nTotal = encomendas.size();
 
     encomendas.sort(c3Sort);
     auto it = encomendas.begin();
@@ -222,18 +202,10 @@ void Armazem::cenario3(int dia) {
 
     int tam = time.size();
 
-    auto it1 = time.end();
-    for(int i = 1; i <= time.size(); i++){
-        tempoAcumulado += i * (*it1);
-        it1--;
-    }
-
-
-
     cout << "Dia "<< dia << endl;
     cout << "Numero de Encomendas Entregues: " << tam << endl;
     cout << "Numero de Encomendas Total: " << nTotal << endl;
     cout << "Perc. de Encomendas Entregues: " << (double) tam/nTotal * 100 << "%" << endl;
     cout << "Tempo Total: " << total << endl;
-    cout << "Tempo Medio: "<< (double) tempoAcumulado/tam << endl << endl;
+    cout << "Tempo Medio: "<< (double) total/tam << endl << endl;
 }
