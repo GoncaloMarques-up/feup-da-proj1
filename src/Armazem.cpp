@@ -206,7 +206,7 @@ bool c3Sort(const Encomenda &encomenda1, const Encomenda &encomenda2){
 
 void Armazem::cenario3(int dia) {
     list<int> time;
-    int total = 0, current, workHours = 28800, tempoAcumulado = 0, nTotal = encomendas.size();
+    int total = 0, current, workHours = 28800, nTotal = encomendas.size();
 
     encomendas.sort(c3Sort);
     auto it = encomendas.begin();
@@ -222,18 +222,10 @@ void Armazem::cenario3(int dia) {
 
     int tam = time.size();
 
-    auto it1 = time.end();
-    for(int i = 1; i <= time.size(); i++){
-        tempoAcumulado += i * (*it1);
-        it1--;
-    }
-
-
-
     cout << "Dia "<< dia << endl;
     cout << "Numero de Encomendas Entregues: " << tam << endl;
     cout << "Numero de Encomendas Total: " << nTotal << endl;
     cout << "Perc. de Encomendas Entregues: " << (double) tam/nTotal * 100 << "%" << endl;
     cout << "Tempo Total: " << total << endl;
-    cout << "Tempo Medio: "<< (double) tempoAcumulado/tam << endl << endl;
+    cout << "Tempo Medio: "<< (double) total/tam << endl << endl;
 }
