@@ -1,3 +1,3 @@
-C:/Users/ASUS/Desktop/Rui/FACULDADE/FEUP/2o Ano/2o Semestre/DA/DA-Proj1/cmake-build-debug/CMakeFiles/projeto_DA.dir
-C:/Users/ASUS/Desktop/Rui/FACULDADE/FEUP/2o Ano/2o Semestre/DA/DA-Proj1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/ASUS/Desktop/Rui/FACULDADE/FEUP/2o Ano/2o Semestre/DA/DA-Proj1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/goncalo/Desktop/DA/DA-Proj1/cmake-build-debug/CMakeFiles/projeto_DA.dir
+/home/goncalo/Desktop/DA/DA-Proj1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/goncalo/Desktop/DA/DA-Proj1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
