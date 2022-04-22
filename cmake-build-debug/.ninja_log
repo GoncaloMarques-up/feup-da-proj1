@@ -1,9 +1,0 @@
-# ninja log v5
-515	821	6722548259492203	projeto_DA.exe	5feb192730ab635c
-1	25	1650645006183744304	CMakeFiles/projeto_DA.dir/src/Encomenda.cpp.o	f8f6e6c714918c6e
-0	265	1650645006423744869	CMakeFiles/projeto_DA.dir/src/Carrinha.cpp.o	117eb70117bb5b55
-1	331	1650645006491745030	CMakeFiles/projeto_DA.dir/src/Menu.cpp.o	1ba60045cb249081
-0	353	1650645006511745077	CMakeFiles/projeto_DA.dir/main.cpp.o	fb003c106ab1763b
-1	363	1650645006523745105	CMakeFiles/projeto_DA.dir/src/FileReader.cpp.o	5b9937dc7c9ded38
-0	469	1650645006627745350	CMakeFiles/projeto_DA.dir/src/Armazem.cpp.o	caf6ae70f1e433dc
-469	543	1650645006703745529	projeto_DA	31b1b3ea207ec3d3
