@@ -117,28 +117,8 @@ bool c2EncomendasSort(const Encomenda &encomenda1, const Encomenda &encomenda2){
     return encomenda1.getRecompensa() > encomenda2.getRecompensa();
 }
 
-
 /**
- * computes the sum of the custo if all the trucks in the list
- * @param carrinhas
- * @return integer lucro
- */
-int lucro(const list<Carrinha>& carrinhas){
-    int lucro = 0;
-    for(auto carrinha : carrinhas){
-        if(carrinha.getEncomendas().empty())
-            break;
-        lucro -= carrinha.getCusto();
-        for(auto encomenda : carrinha.getEncomendas())
-            lucro += encomenda.getRecompensa();
-    }
-
-    return lucro;
-}
-
-
-/**
- * computes the sum of the recompensa of all the packages in the truck
+ * computes the sum of the recompensa of all the packages in the truck minus the cost of the truck
  * @param carrinha
  * @return integer lucro
  */
@@ -173,7 +153,7 @@ void Armazem::cenario2() {
            else
                it++;
         }
-        int currLucro = lucro(carrinhas);
+        int currLucro = maxLucro + lucroPorCarrinha(carrinha);
         if(currLucro >= maxLucro)
             maxLucro = currLucro;
         else{
